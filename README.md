@@ -1,1 +1,1 @@
-# about-ajin
+issue 확인
