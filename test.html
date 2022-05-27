@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+  <div id="root">
+    <div id="front-box"></div>
+    <div id="back-box"></div>
+  </div>
+
+  <script>
+
+    const root = document.getElementById('root');
+    const frontBox = document.getElementById('front-box');
+    const backBox = document.getElementById('back-box');
+    // console.log(backBox);
+
+    let frontHeight = 80;
+    let backHeight = 81;
+    let frontTop = 10;
+    let backTop = 9;
+    let frontWidth = 70;
+    let backWidth = 70;
+    let leftValue = 15;
+
+    frontBox.style.height = `${frontHeight}vh`;
+    backBox.style.height = `${backHeight}vh`;
+    frontBox.style.top = `${frontTop}vh`;
+    backBox.style.top = `${backTop}vh`;
+    frontBox.style.width = `${frontWidth}vw`;
+    backBox.style.width = `${backWidth}vw`;
+    frontBox.style.transition = '0.5s';
+    backBox.style.transition = '0.5s';
+
+
+    let clickI = 0;
+
+    root.addEventListener('wheel', function(){
+      if(clickI === 0){
+      
+        const boxMoving = setInterval(function(){
+          frontHeight = frontHeight+1;
+          backHeight = backHeight+1;
+    
+          frontBox.style.height = `${frontHeight}vh`;
+          backBox.style.height = `${backHeight}vh`;
+    
+          if(frontHeight >= 90 && backHeight > 90){
+            clearInterval(boxMoving);
+
+            const topMoving = setInterval(function(){
+              frontTop = frontTop-1;
+              backTop = backTop-1;
+              frontBox.style.top = `${frontTop}vh`;
+              backBox.style.top = `${backTop}vh`;
+              
+              if(frontTop <= 0 && backTop < 0){
+                clearInterval(topMoving);
+                clickI = 1;
+              }
+            }, 10);
+          }
+          
+        }, 15);
+      
+      }
+
+
+      if(clickI === 1){
+          // frontBox.style.backgroundColor = 'red';
+  
+          // frontBox의 움직임
+          // 1. 가로 값이 줄어든다.
+          // 2. 가로 값이 20vw까지 줄어들었을 때
+          // 3. left값이 0이 된다.
+          // 4. 가로 값이 15가 된다.
+          const widthMoving = setInterval(function(){
+            frontWidth = frontWidth-1;
+            frontBox.style.width = `${frontWidth}vw`;
+            
+            if(frontWidth === 31){
+              clearInterval(widthMoving);
+  
+              const leftMoving = setInterval(function(){
+                leftValue = leftValue-1;
+                frontBox.style.left = `${leftValue}vw`;
+                frontWidth = frontWidth-1;
+                frontBox.style.width = `${frontWidth}vw`;
+
+                if(leftValue === 0 && frontWidth <= 16){
+                  clearInterval(leftMoving);
+                  frontBox.style.backgroundColor = '#333';
+                  backBox.style.backgroundColor = '#fff';
+
+                  clickI = 2;
+            }
+
+          }, 5)
+            }
+          }, 5);
+        }
+    });
+
+
+  </script>
+
+</body>
+
+
+</html>
