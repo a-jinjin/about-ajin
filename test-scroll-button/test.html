@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ajinspaper-test</title>
+  <link rel="stylesheet" href="./test.css">
+</head>
+
+<body>
+  <div id="root">
+
+    <div id="front"></div>
+    <div id="back"></div>
+    <div id="btnBox">
+      <button data-btn="1"></button>
+      <button data-btn="2"></button>
+    </div>
+
+  </div>
+
+  <script>
+    const root = document.getElementById('root');
+    const btnBox = document.getElementById('btnBox');
+    console.log(btnBox.children); // htmlCollection (유사배열)
+    const btnUp = btnBox.children[0];
+    const btnDown = btnBox.children[1];
+    console.dir(btnDown);
+
+    btnBox.addEventListener('click', function(e){
+      // console.log(e.srcElement); // dataset 사용 가능할것같음
+      // console.log(e.srcElement.dataset.btn); // 가능!
+      // ==> dataset에 들어있는 값은 숫자처럼 보이는 string
+
+      if(e.srcElement.dataset.btn === '1'){
+        window.scrollTo(0,0);
+      }else{
+        window.scrollTo(0, root.clientHeight/2)
+      }
+    })
+
+    // btnUp.addEventListener('click', function(){
+    //   console.dir(window.scrollTo);
+    //   console.dir(root.clientHeight);
+    //   // console.log(1956/2)
+    //   window.scrollTo(0, 0)
+    // })
+
+    // btnDown.addEventListener('click', function(){
+    //   // console.dir(window.scrollTo);
+    //   // console.dir(root.clientHeight);
+    //   window.scrollTo(0, root.clientHeight/2)
+    // })
+
+
+  </script>
+</body>
+</html>
