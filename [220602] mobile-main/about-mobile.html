@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div id="root">
+    <!-- 로고 영역 -->
+    <header id="logo">
+      <img src="./img/logo.svg" alt="">
+    </header>
+
+    <!-- 프로젝트 거치대 -->
+    <article>
+      <!-- 프로젝트 1, 2 -->
+      <div class="news-box">
+        <!-- 가림막 두 개 -->
+        <div class="news-bar z-index-2"></div>
+        <div class="news-bar z-index-2 position-bottom-40"></div>
+        <!-- 프로젝트 두 개 -->
+        <div class="news z-index-1 position-left-10">
+        </div>
+        <div class="news z-index-1 position-right-10">
+        </div>
+        <!-- 배경 -->
+        <div class="news-back z-index-0"></div>
+      </div>
+      <!-- 프로젝트 3, 4 -->
+      <div class="news-box">
+        <!-- 가림막 두 개 -->
+        <div class="news-bar z-index-2"></div>
+        <div class="news-bar z-index-2 position-bottom-40"></div>
+        <!-- 프로젝트 두 개 -->
+        <div class="news z-index-1 position-left-10">
+        </div>
+        <div class="news z-index-1 position-right-10">
+        </div>
+        <!-- 배경 -->
+        <div class="news-back z-index-0"></div>
+      </div>
+    </article>
+
+    <!-- 하단부 -->
+    <footer class="z-index-1">
+      <!-- 자기소개, 깃허브, 이메일 -->
+      <div>
+        <button class="btn-50">me</button>
+        <button class="btn-50">git</button>
+        <button class="btn-50">mail</button>
+      </div>
+      <!-- 카피라이트 -->
+      <p class="txt-12 txt-center margin-top-10">Copyright [C] AjinLee</p>
+    </footer>
+
+    <!-- 배경 이미지 -->
+    <div class="bg-image"><img src="./img/bg-blur.svg" alt=""></div>
+  </div>
+
+
+  <script>
+    const root = document.getElementById('root');
+    const btn50 = document.querySelectorAll('.btn-50');
+    // console.log(btn50.length)
+
+    // 하단 버튼 이벤트
+    for(let btnI = 0; btnI < btn50.length; btnI++){
+      // console.log(btn50[btnI].style.backgroundColor);
+      btn50[btnI].addEventListener('mouseover', function(){
+        btn50[btnI].style.backgroundColor = '#E15546';
+        btn50[btnI].style.color = '#EAE5D2'
+      });
+      btn50[btnI].addEventListener('mouseout', function(){
+        btn50[btnI].style.backgroundColor = '#EAE5D2';
+        btn50[btnI].style.color = '#E15546'
+      });
+    }
+
+    // 프로젝트 버튼이벤트
+    const projectImageOff = [
+      `url(./img/project-thum-off-01.svg)`,
+      `url(./img/project-thum-off-02.svg)`,
+      `url(./img/project-thum-off-03.svg)`,
+      `url(./img/project-thum-off-04.svg)`
+    ];
+
+    const projectImageOn = [
+      `url(./img/project-thum-on-01.svg)`,
+      `url(./img/project-thum-on-02.svg)`,
+      `url(./img/project-thum-on-03.svg)`,
+      `url(./img/project-thum-on-04.svg)`
+    ];
+
+    const projectName = [
+      `INK TODAY`,
+      `FIDGET ROOM`,
+      `EGG TIMER`,
+      `WE WILL ROCK YOU`
+    ];
+
+    const news = document.querySelectorAll('.news');
+    // console.log(news); //nodelist
+    for(let newsI = 0; newsI < news.length; newsI++){
+      // console.log(btn50[btnI].style.backgroundColor);
+      news[newsI].style.backgroundImage = projectImageOff[newsI];
+      news[newsI].setAttribute('data-newsnum', `${newsI}`);
+      // console.dir(news[newsI]);
+
+      news[newsI].addEventListener('mouseover', function(){
+        news[newsI].style.backgroundImage = projectImageOn[newsI];
+        news[newsI].style.bottom = `20%`;
+        news[newsI].style.boxShadow = `0.5vh 0.5vh 0 #ECC4B9`;
+        news[newsI].style.zIndex = 3;
+      });
+      news[newsI].addEventListener('mouseout', function(){
+        news[newsI].style.backgroundImage = projectImageOff[newsI];
+        news[newsI].style.bottom = `0`;
+        news[newsI].style.boxShadow = '';
+        news[newsI].style.zIndex = 1;
+      });
+
+      news[newsI].addEventListener('click', function(e){
+        let popNews = document.createElement('div');
+        root.appendChild(popNews);
+        popNews.classList.add('pop-news');
+        let popChildNum = document.createElement('div');
+        let popChildProject = document.createElement('div');
+        let popChildImage = document.createElement('div');
+        let popChildDate = document.createElement('div');
+        popNews.appendChild(popChildNum);
+        popChildNum.classList.add('pop-num');
+        popNews.appendChild(popChildProject);
+        popChildProject.classList.add('pop-txt-big');
+        popNews.appendChild(popChildImage);
+        popChildImage.classList.add('pop-image')
+        popNews.appendChild(popChildDate);
+        popChildDate.classList.add('pop-txt-small')
+        
+        console.log(e.target);
+        
+        if(e.target.dataset.newsnum === '0'){
+          popChildNum.textContent = '01';
+          popChildProject.textContent = projectName[0];
+          popChildDate.textContent = 'MAY 2022';
+        }else if(e.target.dataset.newsnum === '1'){
+          popChildNum.textContent = '02';
+          popChildProject.textContent = projectName[1];
+          popChildDate.textContent = 'MAY 2022';
+        }else if(e.target.dataset.newsnum === '2'){
+          popChildNum.textContent = '03';
+          popChildProject.textContent = projectName[2];
+          popChildDate.textContent = 'MAY 2022';
+        }else{
+          popChildNum.textContent = '04';
+          popChildProject.textContent = projectName[3];
+          popChildDate.textContent = 'MAY 2022';
+        }
+
+
+        let popBlur = document.createElement('div');
+        root.appendChild(popBlur);
+        popBlur.classList.add('pop-blur');
+        popBlur.addEventListener('click', function(){
+          root.removeChild(popNews);
+          root.removeChild(popBlur);
+        })
+      });
+    }
+
+    
+  </script>
+</body>
+</html>
