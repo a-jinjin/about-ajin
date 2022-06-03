@@ -1,7 +1,9 @@
-.txt-12 {
-  font-size: 12px;
-}
+.txt-12 { font-size: 12px; }
+.txt-14 { font-size: 14px; }
+.txt-bold { font-weight: bold; }
 
-.txt-center {
-  text-align: center;
-}
+.txt-right { text-align: right; }
+.txt-center { text-align: center; }
+
+.txt-line-22 { line-height: 22px; }
+.txt-line-26 { line-height: 26px; }

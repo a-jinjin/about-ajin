@@ -2,6 +2,7 @@
 @import url('./text.css');
 @import url('./margin.css');
 @import url('./color.css');
+@import url('./position.css');
 
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
