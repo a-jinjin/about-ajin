@@ -48,9 +48,9 @@
     <footer class="z-index-1">
       <!-- 자기소개, 깃허브, 이메일 -->
       <div>
-        <button class="btn-50">me</button>
-        <button class="btn-50">git</button>
-        <button class="btn-50">mail</button>
+        <button class="btn-50"></button>
+        <button class="btn-50"></button>
+        <button class="btn-50"></button>
       </div>
       <!-- 카피라이트 -->
       <p class="txt-12 txt-center margin-top-10">Copyright [C] AjinLee</p>
@@ -66,16 +66,31 @@
     const btn50 = document.querySelectorAll('.btn-50');
     // console.log(btn50.length)
 
+    // 하단 버튼 이미지
+    const btnBottomOff = [
+      `url(./img/btn-bottom-off-01.svg)`,
+      `url(./img/btn-bottom-off-02.svg)`,
+      `url(./img/btn-bottom-off-03.svg)`,
+      `url(./img/btn-bottom-off-04.svg)`
+    ];
+
+    const btnBottomOn = [
+      `url(./img/btn-bottom-on-01.svg)`,
+      `url(./img/btn-bottom-on-02.svg)`,
+      `url(./img/btn-bottom-on-03.svg)`,
+      `url(./img/btn-bottom-on-04.svg)`
+    ];
+
     // 하단 버튼 이벤트
     for(let btnI = 0; btnI < btn50.length; btnI++){
       // console.log(btn50[btnI].style.backgroundColor);
+      btn50[btnI].style.backgroundImage = btnBottomOff[btnI];
+
       btn50[btnI].addEventListener('mouseover', function(){
-        btn50[btnI].style.backgroundColor = '#E15546';
-        btn50[btnI].style.color = '#EAE5D2'
+        btn50[btnI].style.backgroundImage = btnBottomOn[btnI];
       });
       btn50[btnI].addEventListener('mouseout', function(){
-        btn50[btnI].style.backgroundColor = '#EAE5D2';
-        btn50[btnI].style.color = '#E15546'
+        btn50[btnI].style.backgroundImage = btnBottomOff[btnI];
       });
     }
 
@@ -100,6 +115,7 @@
       `EGG TIMER`,
       `WE WILL ROCK YOU`
     ];
+
 
     const news = document.querySelectorAll('.news');
     // console.log(news); //nodelist
@@ -139,12 +155,15 @@
         popNews.appendChild(popChildDate);
         popChildDate.classList.add('pop-txt-small')
         
-        console.log(e.target);
+        // console.log(e.target);
         
         if(e.target.dataset.newsnum === '0'){
           popChildNum.textContent = '01';
           popChildProject.textContent = projectName[0];
           popChildDate.textContent = 'MAY 2022';
+          popNews.addEventListener('click', function(){
+            location.href = './about-mobile-ink.html';
+          });
         }else if(e.target.dataset.newsnum === '1'){
           popChildNum.textContent = '02';
           popChildProject.textContent = projectName[1];
