@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./test.css">
+</head>
+
+<body>
+  <div id="root">
+    <div id="books"></div>
+  </div>
+
+
+  <script>
+    const root = document.getElementById('root');
+    const books = document.getElementById('books');
+    
+    /*
+    1. books를 클릭한다.
+    --> books에 clickEvent
+
+    2. 새로운 요소가 생성된다. (bgBlur / magazin)
+    --> document.creatElement
+    
+    3. magazin을 클릭한다.
+    --> 추가된 요소에 clickEvent
+    
+    4-1. magazin 요소의 크기가 늘어난다.
+    4-2. 새로운 요소가 추가된다. (paper)
+      *** 4-1과 4-2는 동시에 일어나야한다.
+    */
+
+    //1. books 클릭 이벤트
+    books.addEventListener('click', () => {
+      
+      //2. 새로운 요소 생성
+      const bgBlur = document.createElement('div');
+      const magazin = document.createElement('div');
+      root.appendChild(bgBlur);
+      root.appendChild(magazin);
+      bgBlur.classList.add('bg-blur');
+      magazin.classList.add('magazin');
+
+      //3. magazin 클릭 이벤트
+      magazin.addEventListener('click', () => {
+
+        //4-1. 크기가 늘어나는 magazin
+        let magazinSize = 40;
+        let magazinPosition = 30;
+        
+        let magazinMove = setInterval(() => {
+          if(magazinSize >= 90 && magazinPosition <= 5) {
+            clearInterval(magazinMove);
+
+          }else{
+            magazinSize = magazinSize+10;
+            magazinPosition = magazinPosition-5;
+            magazin.style.width = `${magazinSize}vw`;
+            magazin.style.height = `${magazinSize+5}vh`;
+            magazin.style.top = `${magazinPosition}vh`;
+            magazin.style.left = `${magazinPosition}vw`;
+          }
+        }, 20);
+        
+        //4-2. 새로운 요소를 추가 (paper)
+        const paper = document.createElement('div');
+        root.appendChild(paper);
+        paper.classList.add('grid')
+        let gridTop = 100;
+        paper.style.top = `${gridTop}vh`;
+
+        //4-2. paper가 아래에서 위로 올라온다.
+        let paperMove = setInterval(() => {
+          if(gridTop <= 0) {
+            clearInterval(paperMove);
+          
+          }else{
+            gridTop = gridTop-10;
+            paper.style.top = `${gridTop}vh`;
+          }
+        }, 20);
+        
+      });
+    });
+  </script>
+</body>
+</html>
