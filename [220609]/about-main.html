@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>my room</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+
+
+<body>
+  <div id="root">
+    <!-- 상단 로고 -->
+    <header></header>
+    
+    <!-- 내용물 영역 -->
+    <article id="book-stand">
+      <!-- 책장 -->
+      <div>
+        <div data-bookNum="1"></div>
+        <div data-bookNum="2"></div>
+      </div>
+      <div>
+        <div data-bookNum="3"></div>
+        <div data-bookNum="4"></div>
+      </div>      
+    </article>
+    
+    <!-- 버튼들 -->
+    <footer>
+      <div>
+        <button></button>
+        <button></button>
+        <button></button>
+      </div>
+      <p>CONTACT ME !</p>
+    </footer>
+    
+    <!-- 배경 영역 -->
+    <div>
+      <!-- 창문 -->
+      <div></div>
+      <!-- 책상 -->
+      <div></div>
+      <!-- 그라데이션 -->
+      <div></div>
+    </div>
+
+    <!-- display : none -->
+    <div class="bg-blur"></div>
+    <div class="book-thum"></div>
+
+  </div>
+
+
+  <script>
+    const root = document.getElementById('root');
+    const bookStand = document.getElementById('book-stand');
+    const bookThum = document.querySelector('.book-thum');
+    const bgBlur = document.querySelector('.bg-blur');
+    // console.dir(bookThum)
+
+    let bookThumArr = [
+      `url(./image/book-thum-01.svg)`,
+      `url(./image/book-thum-02.svg)`,
+      `url(./image/book-thum-03.svg)`
+    ];
+
+    bookStand.addEventListener('click', (e) => {
+      let bookNumber = e.target.dataset.booknum;
+
+      for (let i = 1; i <= 3; i++) {
+        if(bookNumber === `${i}`) {
+          // console.log(`${i}번째 책`);
+          bgBlur.style.display = 'block';
+          bookThum.style.display = 'block';
+          bookThum.style.backgroundImage = bookThumArr[i-1];
+        }
+      }
+    })
+
+    bgBlur.addEventListener('click', () => {
+      bookThum.style.display = 'none';
+      bgBlur.style.display = 'none';
+    })
+
+    bookThum.addEventListener('click', () => {
+      // 새로운 페이퍼 추가
+      const paper = document.createElement('div');
+      paper.classList.add('magazin-bg');
+      root.appendChild(paper);
+
+      let magazinRight = -100;
+      paper.style.right = `${magazinRight}vw`;
+
+      let magazinMove = setInterval(() => {
+        if(magazinRight === 0) {
+          clearInterval(magazinMove);
+        
+        }else{
+          magazinRight = magazinRight+10;
+          paper.style.right = `${magazinRight}vw`;
+        }
+      }, 30);
+
+      // 새로운 배경 추가
+      const bgPaper = document.createElement('div');
+      bgPaper.classList.add('grid');
+      root.appendChild(bgPaper);
+      
+      let gridTop = 100;
+      bgPaper.style.top = `${gridTop}vh`;
+      
+      // 배경이 아래에서 위로 올라오게
+      let paperMove = setInterval(() => {
+        if(gridTop <= 0) {
+          clearInterval(paperMove);
+        
+        }else{
+          gridTop = gridTop-10;
+          bgPaper.style.top = `${gridTop}vh`;
+        }
+      }, 20);
+    });
+
+  </script>
+
+</body>
+</html>

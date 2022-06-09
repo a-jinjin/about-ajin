@@ -1,0 +1,220 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  background-color: #EAE5D2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+#root > header {
+  width: 18vh;
+  height: 18vh;
+  background-image: url(./image/logo-type.svg);
+  background-repeat: no-repeat;
+  margin-top: 7vh;
+  position: relative;
+  z-index: 2;
+}
+#root > article {
+  width: 350px;
+  height: 420px;
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+#root > article > div {
+  width: 100%;
+  height: 45%;
+  background-image: url(./image/book-stand.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+#root > article > div > div {
+  width: 120px;
+  height: 140px;
+  border: 2px solid #182335;
+  border-radius: 3px;
+  margin: 0 10px 22px 10px;
+  background-color: #fff;
+  transition: 0.3s;
+}
+#root > article > div > div:hover {
+  margin: 0 10px 42px 10px;
+  background-color: #182335;
+}
+#root > article > div:nth-child(1) > div:nth-child(1) {
+  background-image: url(./image/numbers-01.svg);
+}
+#root > article > div:nth-child(1) > div:nth-child(2) {
+  background-image: url(./image/numbers-02.svg);
+}
+#root > article > div:nth-child(2) > div:nth-child(1) {
+  background-image: url(./image/numbers-03.svg);
+}
+#root > article > div:nth-child(2) > div:nth-child(2) {
+  background-image: url(./image/numbers-04.svg);
+}
+#root > footer {
+  width: 140px;
+  height: 60px;
+  margin-top: 17vh;
+  position: relative;
+  z-index: 2;
+}
+#root > footer > div:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+}
+#root > footer > div:nth-child(1) > button {
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+  border: 1px solid #182335;
+  box-shadow: 1px 1px 0 #182335;
+}
+#root > footer > div:nth-child(1) > button:nth-child(1) {
+  background-image: url(./image/btn-bottom-off-1.svg);
+}
+#root > footer > div:nth-child(1) > button:nth-child(2) {
+  background-image: url(./image/btn-bottom-off-2.svg);
+}
+#root > footer > div:nth-child(1) > button:nth-child(3) {
+  background-image: url(./image/btn-bottom-off-3.svg);
+}
+#root > footer > p:nth-child(2) {
+  margin-top: 10px;
+  font-size: 12px;
+  text-align: center;
+  color: #182335;
+}
+#root > div:nth-child(4) {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+}
+#root > div:nth-child(4) > div:nth-child(1) {
+  width: 600px;
+  height: 370px;
+  background-image: url(./image/room-windows.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 7vh;
+  left: -100vw;
+  z-index: 1;
+}
+@media screen and (min-width: 501px) {
+  #root > div:nth-child(4) > div:nth-child(1) {
+    left: -80vw;
+  }
+}
+@media screen and (min-width: 800px) {
+  #root > div:nth-child(4) > div:nth-child(1) {
+    left: -38vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #root > div:nth-child(4) > div:nth-child(1) {
+    left: -5vw;
+  }
+}
+#root > div:nth-child(4) > div:nth-child(2) {
+  width: 500px;
+  height: 430px;
+  background-image: url(./image/room-desk.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 5vh;
+  right: -140vw;
+  z-index: 1;
+}
+@media screen and (min-width: 501px) {
+  #root > div:nth-child(4) > div:nth-child(2) {
+    right: -90vw;
+  }
+}
+@media screen and (min-width: 800px) {
+  #root > div:nth-child(4) > div:nth-child(2) {
+    right: -40vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #root > div:nth-child(4) > div:nth-child(2) {
+    right: -2vw;
+  }
+}
+#root > div:nth-child(4) > div:nth-child(3) {
+  width: 100%;
+  height: 17vh;
+  background: linear-gradient(#ECC4B9, #EAE5D2);
+  filter: blur(1px);
+  position: absolute;
+  bottom: 0;
+}
+#root .bg-blur {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(234, 229, 210, 0.7);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  position: absolute;
+  top: 0;
+  z-index: 4;
+  display: none;
+}
+#root .book-thum {
+  width: 300px;
+  height: 420px;
+  border: 3px solid #182335;
+  border-radius: 4px;
+  box-shadow: 4px 5px 0 #ECC4B9;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  z-index: 5;
+  top: 20vh;
+  display: none;
+}
+@media screen and (min-width: 501px) {
+  #root .book-thum {
+    width: 380px;
+    height: 500px;
+  }
+}
+#root .grid {
+  width: 100%;
+  height: 100%;
+  background-image: url(./image/grid-20.svg);
+  background-size: 14px 14px;
+  position: absolute;
+  z-index: 5;
+  top: 0;
+}
+#root .magazin-bg {
+  width: 100%;
+  height: 95vh;
+  background-color: #fff;
+  border-top: 3px solid #182335;
+  position: absolute;
+  z-index: 6;
+  top: 5vh;
+  right: -100vw;
+}/*# sourceMappingURL=style.css.map */
