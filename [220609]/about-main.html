@@ -96,14 +96,16 @@
       paper.style.right = `${magazinRight}vw`;
 
       let magazinMove = setInterval(() => {
-        if(magazinRight === 0) {
+        if(magazinRight === 5) {
           clearInterval(magazinMove);
+          // 링크 이동 : 현재 클릭한게 무엇인지에 따라 이동할 링크를 다르게 만들어야 함!
+          location.href='./about-book.html';
         
         }else{
-          magazinRight = magazinRight+10;
+          magazinRight = magazinRight+5;
           paper.style.right = `${magazinRight}vw`;
         }
-      }, 30);
+      }, 25);
 
       // 새로운 배경 추가
       const bgPaper = document.createElement('div');
@@ -117,7 +119,7 @@
       let paperMove = setInterval(() => {
         if(gridTop <= 0) {
           clearInterval(paperMove);
-        
+
         }else{
           gridTop = gridTop-10;
           bgPaper.style.top = `${gridTop}vh`;

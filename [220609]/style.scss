@@ -212,16 +212,18 @@
   & .grid {
     width: 100%; height: 100%;
     background-image: url(./image/grid-20.svg);
-    background-size: 14px 14px;
+    background-size: 30px 30px;
     position: absolute;
     z-index: 5;
     top: 0;
   }
 
   & .magazin-bg {
-    width: 100%; height: 95vh;
+    width: 90vw; height: 95vh;
     background-color: #fff;
-    border-top: 3px solid #182335;
+    border-width: 3px 3px 0 3px;
+    border-style: solid;
+    border-color: #182335;
     position: absolute;
     z-index: 6;
     top: 5vh;
