@@ -1,0 +1,231 @@
+$color-red: #E15546;
+$color-pink: #ECC4B9;
+$color-beige: #EAE5D2;
+$color-black: #182335;
+
+.txt-12 {font-size: 12px;}
+.txt-14 {font-size: 14px;}
+.txt-18 {font-size: 18px;}
+.txt-24 {font-size: 24px;}
+.txt-28 {font-size: 28px;}
+
+.txt-bold {font-weight: bold;}
+
+@mixin border($bor-width, $bor-color, $bor-style) {
+  border-width: $bor-width;
+  border-color: $bor-color;
+  border-style: $bor-style;
+}
+
+* { margin:0; padding:0; box-sizing: border-box; }
+
+#root {
+  width: 100vw; height: 100vh;
+  background-image: url(../image/grid-20.svg);
+  background-size: 30px 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  & > #paper {
+    width: 80vw; height: 95vh;
+    background-color: #fff;
+    color: $color-black;
+    @include border(3px 3px 0 3px, $color-black, solid);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+    z-index: 2;
+    
+
+    // 상단-작은텍스트
+    & > div:nth-child(1) {
+      width: 76vw; height: 5vh;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    // 상단-헤더영역
+    & > header:nth-child(2) {
+      width: 80vw; height: 20vh;
+      @include border(2px 0 2px 0, $color-black, solid);
+      display: flex;
+
+      & > div {
+        width: 20vw; height: 100%;
+        padding: 2vh 2vw 2vh 2vw;
+      }
+
+      & > div:nth-child(1) {
+        & > p:nth-child(1) {
+          margin-bottom: 0.5vh;
+        }
+      }
+
+      & > div:nth-child(2) {
+        width: 40vw;
+        @include border(0 1px 0 1px, $color-black, solid);
+        display: flex;
+        justify-content: center;
+
+        & > div {
+          width: 18vw; height: 16vh;
+          background-image: url(../image/logo-type.svg);
+          background-repeat: no-repeat;
+          background-position: center center;
+        }
+      }
+
+      & > div:nth-child(3) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        & > div:nth-child(1) {
+          width: 16vw; height: 8vh;
+          background-image: url(../image/barcode.svg);
+          background-repeat: repeat-x;
+        }
+
+        & > div:nth-child(2) {
+          width: 16vw; height: 5vh;
+          display: flex;
+          justify-content: flex-end;
+
+          & > button {
+            width: 40px; height: 40px;
+            border-radius: 20px;
+            border: 1px solid $color-black;
+            box-shadow: 1px 1px 0 $color-black;
+            margin-left: 10px;
+          }
+
+          & > button:nth-child(1) {
+            background-image: url(../image/btn-bottom-off-1.svg);
+          }
+          & > button:nth-child(2) {
+            background-image: url(../image/btn-bottom-off-2.svg);
+          }
+          & > button:nth-child(3) {
+            background-image: url(../image/btn-bottom-off-3.svg);
+          }
+        }
+      }
+    }
+
+    // 컨텐츠 내용
+    & > article {
+      width: 80vw; height: 62vh;
+      margin-top: 3vh;
+      display: flex;
+
+      // 이미지 영역
+      & > div:nth-child(1) {
+        width: 60vw; height: 100%;
+
+        & > div:nth-child(1) {
+          width: 56vw; height: 60vh;
+          margin-left: 2vw;
+          background-color: #ccc;
+          border: 1px solid $color-black;
+        }
+        & > div:nth-child(2) {
+          width: 56vw;
+          margin-left: 2vw;
+        }
+      }
+
+      // 내용 영역
+      & > div:nth-child(2) {
+        width: 20vw; height: 100%;
+        // border: 1px solid $color-black;
+
+        // 데코용 박스
+        & > div:nth-child(1) {
+          width: 20vw; height: 7vh;
+          background-color: $color-beige;
+          background-image: url(../image/pattern-wave.svg);
+          background-size: 40px 40px;
+          @include border(1px 3px 1px 1px, $color-black, solid);
+          margin-bottom: 2vh;
+        }
+        
+        // 텍스트 영역
+        & > div:nth-child(2) {
+          width: 20vw; height: 40vh;
+          padding-right: 2vw;
+          line-height: 21px;
+          text-align: justify;
+
+          & > p:nth-child(1) {
+            margin-bottom: 3vh;
+          }
+        }
+
+        // 기기 사이즈
+        & > div:nth-child(3) {
+          width: 20vw; height: 3vh;
+        }
+
+        // 바로보기 버튼
+        & > div:nth-child(4) {
+          width: 20vw; height: 8vh;
+          padding-right: 2vw;
+          @include border(2px 0 2px 0, $color-black, solid);
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          & > p {
+            width: 13vw;
+            font-size: 21px;
+            font-weight: bold;
+          }
+
+          & > button {
+            width: 40px; height: 40px;
+            background-image: url(../image/btn-link-off.svg);
+            border: 1px solid $color-black;
+            box-shadow: 1px 1px 0 $color-black;
+            border-radius: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  & > #menu {
+    width: 20vw; height: 30vh;
+    position: absolute;
+    left: 7vw;
+    top: 10vh;
+    z-index: 1;
+
+    & > div {
+      width: 20vw; height: 8vh;
+      padding-left: 10px;
+      background-color: $color-beige;
+      margin-bottom: 1vh;
+      border: 3px solid $color-black;
+      display: flex;
+      align-items: flex-end;
+      color: $color-black;
+      
+      & > p {
+        width: 6vh; height: 2vh;
+        transform: rotate(-90deg);
+        transform-origin: left top;
+      }
+    }
+
+    & > div:hover {
+      transform: rotate(10deg);
+      background-color: $color-red;
+      transform-origin: left bottom;
+      color: $color-beige;
+    }
+  }
+}
