@@ -4,8 +4,8 @@
 	 viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#ECC4B9;}
-	.st1{fill:none;stroke:#E15546;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#E15546;stroke-width:0.75;stroke-miterlimit:10;}
 </style>
-<rect x="0" class="st0" width="20" height="20"/>
+<rect class="st0" width="20" height="20"/>
 <polyline class="st1" points="19.5,0 19.5,19.5 0,19.5 "/>
 </svg>
