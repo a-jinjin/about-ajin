@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/02-project-01.css">
+</head>
+<body>
+  <div id="root">
+    <!-- 제일 큰 배경 -->
+    <div id="bg-paper">
+      <!-- 상단 헤더영역 -->
+      <header>
+        <!-- 발행호수 -->
+        <div>
+          <p>1 / 4</p>
+          <p>2022 / 제 1호</p>
+        </div>
+        <!-- 로고영역 -->
+        <div>
+          <!-- 좌측 -->
+          <div>
+            <p>월간아진 / 제 1호</p>
+            <p>하루의 잉크</p>
+            <button id="button-back"></button>
+          </div>
+          <!-- 로고 -->
+          <div>
+            <img src="./image/logo-big.svg" alt="logo-main-big">
+          </div>
+          <!-- 우측 -->
+          <div>
+            <!-- 장식 -->
+            <div></div>
+            <!-- 버튼 -->
+            <div>
+              <button></button><button></button><button></button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- 메인 컨텐츠 영역 -->
+      <main>
+        <!-- 좌측 메뉴 -->
+        <aside>
+          <div>프로젝트 소개</div>
+          <div>
+            <p>기분을 색상으로 표현한다면 오늘의 기분은 어떤 색일까요?<br>오늘, 내일, 그리고 매일매일 달라지는 기분의 색만큼 다양한 잉크의 색을 알리고 싶었습니다.</p>
+          </div>
+          <div>
+            <p><span>테스트 기종</span> iPhone pro Max (480 * 926)</p>
+            <div>
+              <p>프로젝트 보러가기</p>
+              <div></div>
+            </div>
+          </div>
+        </aside>
+        <!-- 메인 이미지 -->
+        <article></article>
+      </main>
+
+    </div>
+    <!-- 상단 카테고리 -->
+    <div id="bg-category">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+
+  <script>
+    const topMenuBox = document.getElementById('bg-category');
+    const topMenu = topMenuBox.children;
+    
+    let menuText = [
+      '소개', 
+      '디자인',
+      '분석'
+    ];
+
+    for(let i = 0; i < topMenu.length; i++) {
+      topMenu[i].textContent = menuText[i];
+      
+      if(i === 0) {
+        topMenu[0].classList.add('top-menu-on');
+      }else{
+        topMenu[i].classList.add('top-menu');
+      }
+    }
+
+  </script>
+</body>
+</html>

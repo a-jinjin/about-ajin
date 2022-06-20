@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/01-main-style.css">
+</head>
+<body>
+  
+  <div id="root">
+
+    <!--------- 로고 --------->
+    <header></header>
+
+    <!--------- 책장 --------->
+    <main id="book-container">
+      <!-- 첫번째 단 -->
+      <div class="book-stand">
+        <div class="books margin-r-20" data-book-mini="0"></div>
+        <div class="books" data-book-mini="1"></div>
+      </div>
+      <!-- 두번째 단 -->
+      <div class="book-stand">
+        <div class="books margin-r-20" data-book-mini="2"></div>
+        <div class="books" data-book-mini="3"></div>
+      </div>
+    </main>
+
+    <!--------- 버튼 --------->
+    <footer>
+      <button></button>
+      <button></button>
+      <button></button>
+    </footer>
+
+    <!--------- 배경 --------->
+    <div>
+      <!-- 창문 -->
+      <div></div>
+      <!-- 책상 -->
+      <div></div>
+      <!-- 바닥 -->
+      <div></div>
+    </div>
+  </div>
+
+
+  <script>
+    const root = document.getElementById('root');
+    const bookContainer = document.getElementById('book-container');
+    const books = document.querySelectorAll('.books');
+    
+    // 책 1~4권 배경이미지
+    const bookMiniImg = [
+    `url(../image/books-mini-01.svg)`,
+    `url(../image/books-mini-02.svg)`,
+    `url(../image/books-mini-03.svg)`,
+    `url(../image/books-mini-04.svg)`
+    ]
+
+     // 책 1~4권 썸네일 배경이미지
+    const bookThumImg = [
+    `url(../image/book-thum-01.svg)`,
+    `url(../image/book-thum-02.svg)`,
+    `url(../image/book-thum-03.svg)`,
+    `url(../image/book-thum-04.svg)`
+    ]
+
+    const projectLink = [
+    './02-project-01.html',
+    './02-project-01.html',
+    './02-project-01.html',
+    './02-project-01.html'
+    ]
+
+    for(let i = 0; i < books.length; i++) {
+      books[i].style.backgroundImage = bookMiniImg[i];
+
+      books[i].addEventListener('mouseover', function() {
+        books[i].classList.remove('books');
+        books[i].classList.add('books-on');
+      });
+  
+      books[i].addEventListener('mouseout', function() {
+        books[i].classList.remove('books-on');
+        books[i].classList.add('books');
+      });
+
+      // books 클릭하면 썸네일 이미지 생성
+      books[i].addEventListener('click', function(e) {
+        const buttonClose = document.createElement('button');
+        const bookThum = document.createElement('div');
+        const bgBlur = document.createElement('div');
+
+        let bookMiniNumber = Number(e.target.dataset.bookMini);
+
+        buttonClose.classList.add('btn-close-off');
+        bookThum.classList.add('book-thum');
+        bgBlur.classList.add('bg-blur');
+        root.appendChild(buttonClose);
+        root.appendChild(bookThum);
+        root.appendChild(bgBlur);
+        
+        if(bookMiniNumber === 0){
+          bookThum.style.backgroundImage = bookThumImg[0];
+        }else if(bookMiniNumber === 1){
+          bookThum.style.backgroundImage = bookThumImg[1];
+        }else if(bookMiniNumber === 2){
+          bookThum.style.backgroundImage = bookThumImg[2];
+        }else if(bookMiniNumber === 3){
+          bookThum.style.backgroundImage = bookThumImg[3];
+        }
+      
+        // close버튼 누르면 썸네일 이미지들 삭제
+        buttonClose.addEventListener('click', function() {
+          root.removeChild(buttonClose);
+          root.removeChild(bookThum);
+          root.removeChild(bgBlur);
+        });
+
+        bookThum.addEventListener('click', function() {
+          root.removeChild(buttonClose);
+          
+          const gridPaper = document.createElement('div');
+          gridPaper.classList.add('bg-grid');
+          root.appendChild(gridPaper);
+
+          let gridHeight = 5;
+          let thumWidth = 38;
+          let thumHeight = 50;
+          let thumTop = 24;
+          let thumBgSize = 100;
+
+          const gridMove = setInterval(() => {
+            gridHeight = gridHeight+5;
+            gridPaper.style.height = `${gridHeight}vh`;
+
+            if(gridHeight === 100) {
+              clearInterval(gridMove);
+            }
+          }, 20);
+
+          const thumWidthMove = setInterval(() => {
+            thumWidth = thumWidth+2;
+            bookThum.style.width = `${thumWidth}vw`;
+            bookThum.style.backgroundPosition = `right center`;
+            thumBgSize = thumBgSize-5;
+            bookThum.style.backgroundSize = `${thumBgSize}% 100%`;
+
+            if(thumWidth === 80){
+              clearInterval(thumWidthMove);
+              bookThum.style.borderRadius = 0;
+              bookThum.style.borderWidth = `3px 3px 0 3px`;
+              bookThum.style.boxShadow = 'none';
+              
+              const thumHeightMove = setInterval(() => {
+                thumHeight = thumHeight+6;
+                bookThum.style.height = `${thumHeight}vh`;
+                thumTop = thumTop-2;
+                bookThum.style.top = `${thumTop}vh`;
+
+                if(thumTop === 10) {
+                  clearInterval(thumHeightMove);
+                  // console.log(bookMiniNumber);
+                  // location.href = './02-project-01.html';
+                  location.href = projectLink[bookMiniNumber];
+                }
+
+              }, 10);
+            }
+          }, 10);
+        });
+
+      });
+
+      
+    }
+
+  </script>
+</body>
+</html>
