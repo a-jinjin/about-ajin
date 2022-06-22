@@ -204,82 +204,47 @@
 }
 #root #bg-paper > main > aside > div:nth-child(3) {
   width: 17vw;
-  height: 70px;
-  margin: 1vh 0 0 1vw;
-  padding-left: 1vw;
-  background-image: url(../image/bg-sub-title-off.svg);
-  background-repeat: no-repeat;
-  background-position: left center;
-  display: flex;
-  align-items: center;
-  font-size: 18px;
-  position: absolute;
-  bottom: 8vh;
-}
-#root #bg-paper > main > aside > div:nth-child(4) {
-  width: 17vw;
-  height: 70px;
-  margin: 1vh 0 0 1vw;
-  padding-left: 1vw;
-  background-image: url(../image/bg-sub-title-off.svg);
-  background-repeat: no-repeat;
-  background-position: left center;
-  display: flex;
-  align-items: center;
-  font-size: 18px;
+  height: initial;
+  padding: 2vh 2vw 0 2vw;
   position: absolute;
   bottom: 0;
+}
+#root #bg-paper > main > aside > div:nth-child(3) > p:nth-child(1) {
+  font-size: 12px;
+  text-align: justify;
+}
+#root #bg-paper > main > aside > div:nth-child(3) > p:nth-child(1) > span {
+  font-weight: bold;
+}
+#root #bg-paper > main > aside > div:nth-child(3) > div:nth-child(2) {
+  margin-top: 1vh;
+  width: 13vw;
+  height: 8vh;
+  border-width: 2px 0 2px 0;
+  border-style: solid;
+  border-color: #1D3254;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#root #bg-paper > main > aside > div:nth-child(3) > div:nth-child(2) > p:nth-child(1) {
+  font-size: 18px;
+  font-weight: bold;
+}
+#root #bg-paper > main > aside > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) {
+  width: 35px;
+  height: 35px;
+  background-image: url(../image/button-link-off.svg);
+  background-repeat: no-repeat;
 }
 #root #bg-paper > main > article {
   width: 61vw;
   height: 58vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-#root #bg-paper > main > article > div {
-  width: 61vw;
-  height: 28vh;
-}
-#root #bg-paper > main > article > div:nth-child(1) {
-  display: flex;
-  justify-content: center;
-  gap: 2vh;
-}
-#root #bg-paper > main > article > div:nth-child(1) > div:nth-child(1) {
-  width: 25vh;
-  height: 100%;
-  background-image: url(../image/project01-color-01.svg);
+  border: 1px solid #1D3254;
+  background-image: url(../image/project-01-mockup-1.png);
   background-repeat: no-repeat;
-}
-#root #bg-paper > main > article > div:nth-child(1) > div:nth-child(2) {
-  width: 25vh;
-  height: 100%;
-  background-image: url(../image/project01-color-02.svg);
-  background-repeat: no-repeat;
-}
-#root #bg-paper > main > article > div:nth-child(2) {
-  display: flex;
-  justify-content: center;
-  gap: 2vh;
-}
-#root #bg-paper > main > article > div:nth-child(2) > div:nth-child(1) {
-  width: 25vh;
-  height: 100%;
-  background-image: url(../image/project01-color-03.svg);
-  background-repeat: no-repeat;
-}
-#root #bg-paper > main > article > div:nth-child(2) > div:nth-child(2) {
-  width: 25vh;
-  height: 100%;
-  background-image: url(../image/project01-color-04.svg);
-  background-repeat: no-repeat;
-}
-#root #bg-paper > main > article > div:nth-child(2) > div:nth-child(3) {
-  width: 25vh;
-  height: 100%;
-  background-image: url(../image/project01-color-05.svg);
-  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: auto 100%;
 }
 #root #bg-category {
   width: initial;
@@ -290,4 +255,4 @@
   z-index: 0;
   top: 4vh;
   left: 12vw;
-}/*# sourceMappingURL=02-project-01-design.css.map */
+}/*# sourceMappingURL=02-project-01-main.css.map */

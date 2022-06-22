@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/02-project-01-analysis.css">
+</head>
+<body>
+  <div id="root">
+    <!-- 제일 큰 배경 -->
+    <div id="bg-paper">
+      <!-- 상단 헤더영역 -->
+      <header>
+        <!-- 발행호수 --> 
+        <div>
+          <p>1 / 4</p>
+          <p>2022 / 제 1호</p>
+        </div>
+        <!-- 로고영역 -->
+        <div>
+          <!-- 좌측 -->
+          <div>
+            <p>월간아진 / 제 1호</p>
+            <p>하루의 잉크</p>
+            <button id="button-home"></button>
+          </div>
+          <!-- 로고 -->
+          <div>
+            <img src="./image/logo-big.svg" alt="logo-main-big">
+          </div>
+          <!-- 우측 -->
+          <div>
+            <!-- 장식 -->
+            <div></div>
+            <!-- 버튼 -->
+            <div>
+              <button></button><button></button><button></button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- 메인 컨텐츠 영역 -->
+      <main>
+        <!-- 좌측 메뉴 -->
+        <aside>
+          <div id="subMenu-persona">페르소나</div>
+          <div>
+            <p>만년필의 존재를 이제 막 알게 되었거나 이제부터 알아갈 사용자를 대상으로 서비스를 제작하고싶었다.<br>따라서, 만년필과 잉크의 주 사용층으로 여겨지는 중장년 남성이 아닌 20대의 비교적 젊은 여성을 타겟으로 페르소나 분석을 진행했다.</p>
+          </div>
+          <div id="subMenu-journey">사용자 여정</div>
+        </aside>
+        <!-- 메인 이미지 -->
+        <article>
+          <div>
+            <!-- 페르소나 이미지 -->
+            <div>
+              <!-- 이름과 한줄요약 -->
+              <div>
+                <div><span class="txt-18 txt-bold txt-beige">김진이</span><br>여성/20세</div>
+                <div>기분전환을 위한 새로운 잉크가 필요해</div>
+              </div>
+              <!-- 이미지와 키워드 -->
+              <div>
+                <div></div>
+                <div>
+                  <div>수집가</div>
+                  <div>문구<br>매니아</div>
+                  <div>아날로그<br>감성</div>
+                </div>
+              </div>
+            </div>
+            <!-- 내용 텍스트 -->
+            <div>
+              <p>스토리</p>
+              <p>어린시절부터 문구류를 좋아하던 김진이씨는 최근 만년필이라는 필기구의 매력에 푹 빠져있습니다. 형형색색의 귀여운 문구류들을 모아두던 수집가적인 취미 덕분에 다양한 색상의 만년필용 잉크에도 금방 빠져들게 되었습니다. 기분전환이 필요할때마다 하나씩 잉크를 사 모으다 보니 이제 제법 가짓수도 많아졌습니다.<br>뭔가 더 새로운 잉크 없을까? 누군가가 내 마음을 읽은 것처럼 알아서 잘, 센스있게 딱! 예쁜 잉크를 추천해줬으면 좋겠다는 생각이 듭니다.</p>
+            </div>
+          </div>
+          <div>
+            <!-- 페르소나 이미지 -->
+            <div>
+              <!-- 이름과 한줄요약 -->
+              <div>
+                <div><span class="txt-18 txt-bold txt-beige">박지민</span><br>여성/31세</div>
+                <div>새로운 잉크를 갖고싶지만 모험하고싶지는 않아</div>
+              </div>
+              <!-- 이미지와 키워드 -->
+              <div>
+                <div></div>
+                <div>
+                  <div>방구석<br>취미러</div>
+                  <div>귀찮음<br>MAX</div>
+                  <div>인터넷<br>쇼핑</div>
+                </div>
+              </div>
+            </div>
+            <!-- 내용 텍스트 -->
+            <div>
+              <p>스토리</p>
+              <p>“누워있을 수 없다면 실외입니다.” 지독한 내향형 인도어파 박지민씨는 집에서 할 수 있는 취미라면 쌍수를 들고 환영하는 방구석 취미러입니다.<br>취미 외의 모든것에는 귀찮음을 느끼지만, 의외로 만년필만큼은 편리하게 사용하고 있습니다. 한 자루의 펜만 있으면 어떤 잉크든 넣어서 쓸 수 있다니 이보다 좋을 수 있을까요! 그러나 집 밖을 나서 만년필 잉크를 쇼핑하는것은 박지민씨의 성격에는 잘 맞지 않습니다. 방구석에서 쇼핑해도 실패확률을 줄일 수 있는 방법이 없을까요?</p>
+            </div>
+          </div>
+        </article>
+      </main>
+
+    </div>
+    <!-- 상단 카테고리 -->
+    <div id="bg-category">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+
+  <script>
+    const topMenuBox = document.getElementById('bg-category');
+    const topMenu = topMenuBox.children;
+    const btnHome = document.getElementById('button-home');
+    const btnJourney = document.getElementById('subMenu-journey');
+
+    btnJourney.addEventListener('click', () => {
+      location.href = './02-project-01-analysis-2.html'
+    });
+
+    let menuText = [
+      '소개', 
+      '디자인',
+      '분석'
+    ];
+
+    for(let i = 0; i < topMenu.length; i++) {
+      topMenu[i].textContent = menuText[i];
+      topMenu[i].classList.add('top-menu');
+      topMenu[i].style.cursor = 'pointer';
+      
+      if(i === 2) {
+        topMenu[2].classList.add('top-menu-on');
+        topMenu[0].addEventListener('click', () => {
+          location.href = './02-project-01-main.html'
+        });
+        topMenu[1].addEventListener('click', () => {
+          location.href = './02-project-01-design.html'
+        });
+      }
+    }
+
+
+    btnHome.addEventListener('click', () => {
+      location.href = './01-main.html';
+    });
+
+  </script>
+</body>
+</html>

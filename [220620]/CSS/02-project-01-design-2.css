@@ -236,50 +236,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-#root #bg-paper > main > article > div {
-  width: 61vw;
-  height: 28vh;
-}
-#root #bg-paper > main > article > div:nth-child(1) {
-  display: flex;
-  justify-content: center;
-  gap: 2vh;
-}
-#root #bg-paper > main > article > div:nth-child(1) > div:nth-child(1) {
-  width: 25vh;
-  height: 100%;
-  background-image: url(../image/project01-color-01.svg);
+  border: 1px solid #1D3254;
+  background-image: url(../image/project-01-design-1.png);
   background-repeat: no-repeat;
-}
-#root #bg-paper > main > article > div:nth-child(1) > div:nth-child(2) {
-  width: 25vh;
-  height: 100%;
-  background-image: url(../image/project01-color-02.svg);
-  background-repeat: no-repeat;
-}
-#root #bg-paper > main > article > div:nth-child(2) {
-  display: flex;
-  justify-content: center;
-  gap: 2vh;
-}
-#root #bg-paper > main > article > div:nth-child(2) > div:nth-child(1) {
-  width: 25vh;
-  height: 100%;
-  background-image: url(../image/project01-color-03.svg);
-  background-repeat: no-repeat;
-}
-#root #bg-paper > main > article > div:nth-child(2) > div:nth-child(2) {
-  width: 25vh;
-  height: 100%;
-  background-image: url(../image/project01-color-04.svg);
-  background-repeat: no-repeat;
-}
-#root #bg-paper > main > article > div:nth-child(2) > div:nth-child(3) {
-  width: 25vh;
-  height: 100%;
-  background-image: url(../image/project01-color-05.svg);
-  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center center;
 }
 #root #bg-category {
   width: initial;
@@ -290,4 +251,4 @@
   z-index: 0;
   top: 4vh;
   left: 12vw;
-}/*# sourceMappingURL=02-project-01-design.css.map */
+}/*# sourceMappingURL=02-project-01-design-2.css.map */

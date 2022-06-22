@@ -53,8 +53,9 @@
   width: 100vw;
   height: 100vh;
   display: flex;
-  align-items: flex-end;
   justify-content: center;
+  align-items: flex-end;
+  flex-direction: row;
   position: relative;
   background-image: url(../image/bg-grid.svg);
   background-size: 30px 30px;
@@ -67,6 +68,7 @@
   border-color: #1D3254;
   border-style: solid;
   display: flex;
+  justify-content: "";
   align-items: center;
   flex-direction: column;
   position: relative;
@@ -83,6 +85,8 @@
   padding: 0 2vw 0 2vw;
   display: flex;
   justify-content: space-between;
+  align-items: "";
+  flex-direction: row;
   font-size: 12px;
 }
 #root #bg-paper > header > div:last-child {
@@ -124,6 +128,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
 }
 #root #bg-paper > header > div:last-child > div:nth-child(2) > img {
   width: 17vh;
@@ -214,72 +219,110 @@
   align-items: center;
   font-size: 18px;
   position: absolute;
-  bottom: 8vh;
-}
-#root #bg-paper > main > aside > div:nth-child(4) {
-  width: 17vw;
-  height: 70px;
-  margin: 1vh 0 0 1vw;
-  padding-left: 1vw;
-  background-image: url(../image/bg-sub-title-off.svg);
-  background-repeat: no-repeat;
-  background-position: left center;
-  display: flex;
-  align-items: center;
-  font-size: 18px;
-  position: absolute;
   bottom: 0;
 }
 #root #bg-paper > main > article {
   width: 61vw;
   height: 58vh;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  gap: 1vw;
+  border-bottom: 2px solid #1D3254;
 }
 #root #bg-paper > main > article > div {
-  width: 61vw;
-  height: 28vh;
+  width: 14vw;
+  height: 58vh;
+}
+#root #bg-paper > main > article > div > div:nth-child(1) {
+  width: 100%;
+  height: 7vh;
+  border: 1px solid #1D3254;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: center;
+}
+#root #bg-paper > main > article > div > div:nth-child(2) {
+  width: 100%;
+  height: 13vh;
+  margin-top: 1vh;
+  padding: 1vh 1vw 0 1vw;
+  border-top: 1px solid #1D3254;
+  text-align: justify;
+  font-size: 14px;
+}
+#root #bg-paper > main > article > div > div:nth-child(3) {
+  width: 100%;
+  height: 20vh;
+  margin-top: 1vh;
+  padding: 1vh 1vw 0 1vw;
+  border-top: 1px solid #1D3254;
+  text-align: justify;
+  font-size: 14px;
+  display: flex;
+  justify-content: top;
+  align-items: center;
+  flex-direction: column;
+}
+#root #bg-paper > main > article > div > div:nth-child(3) > div:nth-child(1) {
+  width: 8vh;
+  height: 8vh;
+  border-radius: 3vh;
+  margin-bottom: 1vh;
+  background-image: url(../image/journey-mood-02.svg);
+  background-repeat: no-repeat;
+}
+#root #bg-paper > main > article > div > div:nth-child(4) {
+  width: 100%;
+  height: 13vh;
+  margin-top: 1vh;
+  padding: 1vh 1vw 0 1vw;
+  border-top: 1px solid #1D3254;
+  text-align: justify;
+  font-size: 14px;
 }
 #root #bg-paper > main > article > div:nth-child(1) {
-  display: flex;
-  justify-content: center;
-  gap: 2vh;
+  width: 5vw;
 }
 #root #bg-paper > main > article > div:nth-child(1) > div:nth-child(1) {
-  width: 25vh;
-  height: 100%;
-  background-image: url(../image/project01-color-01.svg);
-  background-repeat: no-repeat;
+  border: none;
 }
 #root #bg-paper > main > article > div:nth-child(1) > div:nth-child(2) {
-  width: 25vh;
-  height: 100%;
-  background-image: url(../image/project01-color-02.svg);
-  background-repeat: no-repeat;
-}
-#root #bg-paper > main > article > div:nth-child(2) {
+  font-size: 18px;
+  font-weight: bold;
   display: flex;
-  justify-content: center;
-  gap: 2vh;
+  justify-content: flex-end;
+  align-items: start;
+  flex-direction: row;
 }
-#root #bg-paper > main > article > div:nth-child(2) > div:nth-child(1) {
-  width: 25vh;
-  height: 100%;
-  background-image: url(../image/project01-color-03.svg);
-  background-repeat: no-repeat;
+#root #bg-paper > main > article > div:nth-child(1) > div:nth-child(3) {
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-end;
+  align-items: start;
+  flex-direction: row;
 }
-#root #bg-paper > main > article > div:nth-child(2) > div:nth-child(2) {
-  width: 25vh;
-  height: 100%;
-  background-image: url(../image/project01-color-04.svg);
-  background-repeat: no-repeat;
+#root #bg-paper > main > article > div:nth-child(1) > div:nth-child(4) {
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-end;
+  align-items: start;
+  flex-direction: row;
 }
-#root #bg-paper > main > article > div:nth-child(2) > div:nth-child(3) {
-  width: 25vh;
-  height: 100%;
-  background-image: url(../image/project01-color-05.svg);
-  background-repeat: no-repeat;
+#root #bg-paper > main > article > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) {
+  background-image: url(../image/journey-mood-02.svg);
+}
+#root #bg-paper > main > article > div:nth-child(3) > div:nth-child(3) > div:nth-child(1) {
+  background-image: url(../image/journey-mood-02.svg);
+}
+#root #bg-paper > main > article > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) {
+  background-image: url(../image/journey-mood-01.svg);
+}
+#root #bg-paper > main > article > div:nth-child(5) > div:nth-child(3) > div:nth-child(1) {
+  background-image: url(../image/journey-mood-03.svg);
 }
 #root #bg-category {
   width: initial;
@@ -290,4 +333,4 @@
   z-index: 0;
   top: 4vh;
   left: 12vw;
-}/*# sourceMappingURL=02-project-01-design.css.map */
+}/*# sourceMappingURL=02-project-01-analysis-2.css.map */

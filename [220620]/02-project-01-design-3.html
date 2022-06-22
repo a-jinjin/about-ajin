@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="./CSS/02-project-01-design.css">
+  <link rel="stylesheet" href="./CSS/02-project-01-design-3.css">
 </head>
 <body>
   <div id="root">
@@ -46,23 +46,25 @@
       <main>
         <!-- 좌측 메뉴 -->
         <aside>
-          <div id="subMenu-color">색상</div>
-          <div>
-            <p>일반적인 필기구는 '검정'이 기본색이지만, 만년필 잉크의 기본색은 '블루블랙' 혹은 '블루'입니다. 만년필 잉크와 관련된 페이지임을 어필하기 위해 메인이 되는 색상을 만년필 잉크에서의 가장 기본의 색, '블루블랙'으로 정했습니다.</p>
-          </div>
-          <div id="subMenu-design">디자인 컨셉</div>
           <div id="subMenu-flow">와이어 플로우</div>
+          <div>
+            <p></p>
+          </div>
+          <div id="subMenu-color">색상</div>
+          <div id="subMenu-design">디자인컨셉</div>
         </aside>
         <!-- 메인 이미지 -->
         <article>
+          <!-- 이미지 -->
+          <div id="slider-img"></div>
+          <!-- 슬라이더 -->
           <div>
-            <div></div>
-            <div></div>
+            <div id="slider-left"></div>
+            <div id="slider-item">
+              <p>1</p>
+              <p>/2</p>
             </div>
-          <div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div id="slider-right"></div>
           </div>
         </article>
       </main>
@@ -81,14 +83,30 @@
     const topMenuBox = document.getElementById('bg-category');
     const topMenu = topMenuBox.children;
     const btnHome = document.getElementById('button-home');
+    const btnColor = document.getElementById('subMenu-color');
     const btnDesign = document.getElementById('subMenu-design');
-    const btnFlow = document.getElementById('subMenu-flow');
+    const sliderBtnLeft = document.getElementById('slider-left');
+    const sliderBtnRight = document.getElementById('slider-right');
+    const sliderContainer = document.getElementById('slider-item');
+    const sliderImg = document.getElementById('slider-img');
 
+    let sliderCurrnet = 0;
+
+    sliderBtnLeft.addEventListener('click', () => {
+      sliderCurrnet--;
+      if(sliderCurrnet === 0) {
+        sliderCurrnet = 0;
+        sliderImg.style.backgroundImage = `url(../image/bg-sub-title.svg)`;
+        
+      }
+    });
+
+
+    btnColor.addEventListener('click', () => {
+      location.href = '02-project-01-design.html';
+    });
     btnDesign.addEventListener('click', () => {
       location.href = '02-project-01-design-2.html';
-    });
-    btnFlow.addEventListener('click', () => {
-      location.href = '02-project-01-design-3.html';
     });
 
     let menuText = [

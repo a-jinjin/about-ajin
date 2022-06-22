@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="./CSS/02-project-01-design.css">
+  <link rel="stylesheet" href="./CSS/02-project-01-main.css">
 </head>
 <body>
   <div id="root">
@@ -46,25 +46,20 @@
       <main>
         <!-- 좌측 메뉴 -->
         <aside>
-          <div id="subMenu-color">색상</div>
+          <div>프로젝트 소개</div>
           <div>
-            <p>일반적인 필기구는 '검정'이 기본색이지만, 만년필 잉크의 기본색은 '블루블랙' 혹은 '블루'입니다. 만년필 잉크와 관련된 페이지임을 어필하기 위해 메인이 되는 색상을 만년필 잉크에서의 가장 기본의 색, '블루블랙'으로 정했습니다.</p>
+            <p>기분을 색상으로 표현한다면 오늘의 기분은 어떤 색일까요?<br>오늘, 내일, 그리고 매일매일 달라지는 기분의 색만큼 다양한 잉크의 색을 알리고 싶었습니다.</p>
           </div>
-          <div id="subMenu-design">디자인 컨셉</div>
-          <div id="subMenu-flow">와이어 플로우</div>
+          <div>
+            <p><span>테스트 기종</span> iPhone pro Max (480 * 926)</p>
+            <div id="project-view">
+              <p>프로젝트 보러가기</p>
+              <div></div>
+            </div>
+          </div>
         </aside>
         <!-- 메인 이미지 -->
-        <article>
-          <div>
-            <div></div>
-            <div></div>
-            </div>
-          <div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-        </article>
+        <article></article>
       </main>
 
     </div>
@@ -80,17 +75,9 @@
   <script>
     const topMenuBox = document.getElementById('bg-category');
     const topMenu = topMenuBox.children;
+    const projectView = document.getElementById('project-view');
     const btnHome = document.getElementById('button-home');
-    const btnDesign = document.getElementById('subMenu-design');
-    const btnFlow = document.getElementById('subMenu-flow');
-
-    btnDesign.addEventListener('click', () => {
-      location.href = '02-project-01-design-2.html';
-    });
-    btnFlow.addEventListener('click', () => {
-      location.href = '02-project-01-design-3.html';
-    });
-
+    
     let menuText = [
       '소개', 
       '디자인',
@@ -99,20 +86,21 @@
 
     for(let i = 0; i < topMenu.length; i++) {
       topMenu[i].textContent = menuText[i];
-      topMenu[i].classList.add('top-menu');
       topMenu[i].style.cursor = 'pointer';
       
       if(i === 0) {
-        topMenu[1].classList.add('top-menu-on');
-        topMenu[0].addEventListener('click', () => {
-          location.href = './02-project-01-main.html'
+        topMenu[0].classList.add('top-menu-on');
+        topMenu[1].addEventListener('click', () => {
+          location.href = './02-project-01-design.html'
         });
-        topMenu[2].addEventListener('click', () => {
-          location.href = './02-project-01-analysis.html'
-        });
+      }else{
+        topMenu[i].classList.add('top-menu');
       }
     }
 
+    projectView.addEventListener('click', () => {
+      location.href = './03-project-view.html';
+    });
 
     btnHome.addEventListener('click', () => {
       location.href = './01-main.html';
