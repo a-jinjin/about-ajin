@@ -140,7 +140,7 @@
         position: relative;
 
         & > div:nth-child(1) {
-          width: 15vw; height: 70px;
+          width: 17vw; height: 70px;
           margin-left: 1vw;
           padding-left: 1vw;
           background-image: url(../image/bg-sub-title.svg);
@@ -166,7 +166,7 @@
         }
 
         & > div:nth-child(3) {
-          width: 15vw; height: 70px;
+          width: 17vw; height: 70px;
           margin: 1vh 0 0 1vw;
           padding-left: 1vw;
           background-image: url(../image/bg-sub-title-off.svg);
@@ -180,7 +180,7 @@
         }
 
         & > div:nth-child(4) {
-          width: 15vw; height: 70px;
+          width: 17vw; height: 70px;
           margin: 1vh 0 0 1vw;
           padding-left: 1vw;
           background-image: url(../image/bg-sub-title-off.svg);
@@ -199,54 +199,21 @@
       & > article {
         width: 61vw; height: 58vh;
         display: flex;
-        flex-direction: column;
         justify-content: space-between;
-
-        & > div:nth-child(1) {
-          width: inherit; height: 50vh;
-          border: 1px solid $color-black;
-          background-image: url(../image/project-01-flow-1.png);
-          background-position: center center;
-          background-repeat: no-repeat;
-          background-size: auto 100%;
+        
+        & > div {
+          width: 30vw; height: 58vh;
         }
 
-        // 슬라이더 영역
+        & > div:nth-child(1) {
+          background-image: url(../image/project02-color-01.svg);
+          background-repeat: no-repeat;
+          background-position: center center;
+        }
         & > div:nth-child(2) {
-          width: inherit; height: 7vh;
-          border-width: 2px 0 2px 0;
-          border-style: solid;
-          border-color: $color-black;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-
-          & > div:nth-child(1) {
-            width: 3vh; height: 3vh;
-            background-image: url(../image/button-arrow-left.svg);
-            background-repeat: no-repeat;
-          }
-
-          & > div:nth-child(2) {
-            width: 10vw; height: 4vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            & > p:nth-child(1) {
-              font-size: 18px;
-              font-weight: bold;
-            }
-            & > p:nth-child(2) {
-              font-size: 14px;
-            }
-          }
-
-          & > div:nth-child(3) {
-            width: 3vh; height: 3vh;
-            background-image: url(../image/button-arrow-right.svg);
-            background-repeat: no-repeat;
-          }
+          background-image: url(../image/project02-color-02.svg);
+          background-repeat: no-repeat;
+          background-position: center center;
         }
       }
     }

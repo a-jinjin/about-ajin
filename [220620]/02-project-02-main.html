@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/02-project-02-main.css">
+</head>
+<body>
+  <div id="root">
+    <!-- 제일 큰 배경 -->
+    <div id="bg-paper">
+      <!-- 상단 헤더영역 -->
+      <header>
+        <!-- 발행호수 --> 
+        <div>
+          <p>2 / 4</p>
+          <p>2022 / 제 2호</p>
+        </div>
+        <!-- 로고영역 -->
+        <div>
+          <!-- 좌측 -->
+          <div>
+            <p>월간아진 / 제 2호</p>
+            <p>피젯 원더랜드</p>
+            <button id="button-home"></button>
+          </div>
+          <!-- 로고 -->
+          <div>
+            <img src="./image/logo-big.svg" alt="logo-main-big">
+          </div>
+          <!-- 우측 -->
+          <div>
+            <!-- 장식 -->
+            <div></div>
+            <!-- 버튼 -->
+            <div>
+              <button></button>
+              <button></button>
+              <button></button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- 메인 컨텐츠 영역 -->
+      <main>
+        <!-- 좌측 메뉴 -->
+        <aside>
+          <div>프로젝트 소개</div>
+          <div>
+            <p>"그 말은 하지 말았어야 했는데.", "그 때 좀 더 화냈어도 됐는데."<br>잠 못 드는 밤, 불안으로 지새우는 어른이들을 위해 마음의 안식처가 되어줄 공간을 만들고싶었습니다.</p>
+          </div>
+          <div>
+            <p><span>테스트 기종</span> iPhone pro Max (480 * 926)</p>
+            <div id="project-view">
+              <p>프로젝트 보러가기</p>
+              <div></div>
+            </div>
+          </div>
+        </aside>
+        <!-- 메인 이미지 -->
+        <article></article>
+      </main>
+
+    </div>
+    <!-- 상단 카테고리 -->
+    <div id="bg-category">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+
+  <script>
+    const topMenuBox = document.getElementById('bg-category');
+    const topMenu = topMenuBox.children;
+    const projectView = document.getElementById('project-view');
+    const btnHome = document.getElementById('button-home');
+    
+    let menuText = [
+      '소개', 
+      '디자인',
+      '분석'
+    ];
+    let projectTwoLink = [
+      `./02-project-02-main.html`,
+      `./02-project-02-design-1.html`,
+      `./02-project-02-analysis-1.html`
+    ]
+
+    for(let i = 0; i < topMenu.length; i++) {
+      topMenu[i].textContent = menuText[i];
+      topMenu[i].style.cursor = 'pointer';
+      topMenu[i].addEventListener('click', () => {
+        location.href = projectTwoLink[i];
+      });
+      
+      if(i === 0) {
+        topMenu[0].classList.add('top-menu-on');
+        
+      }else{
+        topMenu[i].classList.add('top-menu');
+      }
+    }
+
+    projectView.addEventListener('click', () => {
+      location.href = './03-project-view-2.html';
+    });
+
+    btnHome.addEventListener('click', () => {
+      location.href = './01-main.html';
+    });
+
+  </script>
+</body>
+</html>

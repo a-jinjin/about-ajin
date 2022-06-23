@@ -9,29 +9,70 @@
     *{margin:0; padding:0;}
     #root {
       width: 100vw; height: 100vh;
-    }
-
-    .on {
-      width: 100vw; height: 10vh;
       background-color: #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .off {
-      width: 100vw; height: 10vh;
-      background-color: #888;
+    button {
+      width: 100px; height: 50px;
+      margin: 50px;
+    }
+
+    #num-now {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    span {
+      font-size: 14px;
+    }
+
+    #num-total {
+      font-size: 14px;
     }
     
   </style>
 </head>
 <body>
   <div id="root">
-    <div class="on"> menu-1
-      <div>hello</div>
-    </div>
-    <div class="off"> menu-2
-      <div>hello</div>
-    </div>
-    <div class="off"> menu-3</div>
+    <button id="btn-left">left</button>
+    <p id="num-now">1</p>
+    <span>/</span>
+    <p id="num-total">3</p>
+    <button id="btn-right">right</button>
   </div>
+
+  <script>
+    const btnLeft = document.getElementById('btn-left');
+    const btnRight = document.getElementById('btn-right');
+    const numNow = document.getElementById('num-now');
+    const numTotal = document.getElementById('num-total');
+    let current = 0;
+    const numbers = [1, 2, 3];
+
+    btnLeft.addEventListener('click', () => {
+      if (current === 0) {
+        alert('첫페이지');
+        current = 0;
+        numNow.innerText = numbers[current];
+      } else {
+        current--;
+        numNow.innerText = numbers[current];
+      }
+    });
+
+    btnRight.addEventListener('click', () => {
+      if (current === numbers.length-1) {
+        alert('마지막페이지');
+        current = numbers.length-1;
+        numNow.innerText = numbers[current];
+      } else {
+        current++;
+        numNow.innerText = numbers[current];
+      }
+    });
+
+  </script>
 </body>
 </html>

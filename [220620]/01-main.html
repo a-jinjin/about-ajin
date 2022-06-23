@@ -29,9 +29,9 @@
 
     <!--------- 버튼 --------->
     <footer>
-      <button></button>
-      <button></button>
-      <button></button>
+      <button id="btn-ajin"></button>
+      <button id="btn-github"></button>
+      <button id="btn-mail"></button>
     </footer>
 
     <!--------- 배경 --------->
@@ -50,6 +50,11 @@
     const root = document.getElementById('root');
     const bookContainer = document.getElementById('book-container');
     const books = document.querySelectorAll('.books');
+    const btnGithub = document.getElementById('btn-github');
+
+    btnGithub.addEventListener('click', () => {
+      location.href
+    })
     
     // 책 1~4권 배경이미지
     const bookMiniImg = [
@@ -69,8 +74,8 @@
 
     const projectLink = [
     './02-project-01-main.html',
-    './02-project-01-main.html',
-    './02-project-01-main.html',
+    './02-project-02-main.html',
+    './02-project-03-main.html',
     './02-project-01-main.html'
     ]
 

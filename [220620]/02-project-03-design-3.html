@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="./CSS/02-project-01-design-3.css">
+  <link rel="stylesheet" href="./CSS/02-project-03-design-3.css">
 </head>
 <body>
   <div id="root">
@@ -15,15 +15,15 @@
       <header>
         <!-- 발행호수 --> 
         <div>
-          <p>1 / 4</p>
-          <p>2022 / 제 1호</p>
+          <p>3 / 4</p>
+          <p>2022 / 제 3호</p>
         </div>
         <!-- 로고영역 -->
         <div>
           <!-- 좌측 -->
           <div>
-            <p>월간아진 / 제 1호</p>
-            <p>하루의 잉크</p>
+            <p>월간아진 / 제 3호</p>
+            <p>삶은, 삶은 계란</p>
             <button id="button-home"></button>
           </div>
           <!-- 로고 -->
@@ -36,9 +36,9 @@
             <div></div>
             <!-- 버튼 -->
             <div>
-              <button></button>
+              <button id="btn-resume"></button>
               <button id="btn-github"></button>
-              <button></button>
+              <button id="btn-mail"></button>
             </div>
           </div>
         </div>
@@ -76,7 +76,6 @@
     <div id="bg-category">
       <div></div>
       <div></div>
-      <div></div>
     </div>
   </div>
 
@@ -98,10 +97,35 @@
       window.open(gitLink);
     });
 
+    let menuText = [
+      '소개', 
+      '디자인',
+    ];
+
+    let projectTwoLink = [
+      `./02-project-03-main.html`,
+      `./02-project-03-design-1.html`
+    ];
+
+    for(let i = 0; i < topMenu.length; i++) {
+      topMenu[i].textContent = menuText[i];
+      topMenu[i].style.cursor = 'pointer';
+      topMenu[i].addEventListener('click', () => {
+        location.href = projectTwoLink[i];
+      });
+      
+      if(i === 1) {
+        topMenu[1].classList.add('top-menu-on');
+        
+      }else{
+        topMenu[i].classList.add('top-menu');
+      }
+    }
+
     let sliderCurrent = 0;
     const flowImg = [
-      `url(./image/project-01-flow-1.png)`,
-      `url(./image/project-01-flow-2.png)`
+      `url(./image/project-03-flow-1.png)`,
+      `url(./image/project-03-flow-2.png)`
     ]
 
     sliderBtnLeft.addEventListener('click', () => {
@@ -134,33 +158,13 @@
 
 
     btnColor.addEventListener('click', () => {
-      location.href = '02-project-01-design.html';
+      location.href = '02-project-03-design-1.html';
     });
     btnDesign.addEventListener('click', () => {
-      location.href = '02-project-01-design-2.html';
+      location.href = '02-project-03-design-2.html';
     });
 
-    let menuText = [
-      '소개', 
-      '디자인',
-      '분석'
-    ];
-
-    for(let i = 0; i < topMenu.length; i++) {
-      topMenu[i].textContent = menuText[i];
-      topMenu[i].classList.add('top-menu');
-      topMenu[i].style.cursor = 'pointer';
-      
-      if(i === 0) {
-        topMenu[1].classList.add('top-menu-on');
-        topMenu[0].addEventListener('click', () => {
-          location.href = './02-project-01-main.html'
-        });
-        topMenu[2].addEventListener('click', () => {
-          location.href = './02-project-01-analysis.html'
-        });
-      }
-    }
+    
 
 
     btnHome.addEventListener('click', () => {

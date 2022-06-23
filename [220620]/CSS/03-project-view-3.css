@@ -42,7 +42,7 @@
 #root > div:nth-child(1) > div:nth-child(1) > main:nth-child(2) {
   width: 100%;
   height: 100%;
-  background-image: url(../image/project01-page-01.png);
+  background-image: url(../image/project03-page-01.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -73,25 +73,25 @@
 }
 #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
   width: 15vh;
-  height: 15vh;
-  background-image: url(../image/project01-sticker-01.svg);
-  top: 30vh;
-  left: 13vw;
+  height: 30vh;
+  background-image: url(../image/project03-sticker-01.svg);
+  top: 3vh;
+  left: 29vw;
 }
 #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) {
   width: 18vh;
   height: 25vh;
-  background-image: url(../image/project01-sticker-02.svg);
-  top: 32vh;
-  left: 25vw;
+  background-image: url(../image/project03-sticker-02.svg);
+  top: 70vh;
+  left: 5vw;
   z-index: 2;
 }
 #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) {
-  width: 45vh;
-  height: 50vh;
-  background-image: url(../image/project01-sticker-03.svg);
-  top: 5vh;
-  left: 23vw;
+  width: 25vh;
+  height: 27vh;
+  background-image: url(../image/project03-sticker-03.svg);
+  top: 55vh;
+  left: 10vw;
   z-index: 1;
 }
 #root > div:nth-child(2) > div:nth-child(2) {
@@ -102,4 +102,4 @@
   position: absolute;
   right: 5vw;
   top: 5vh;
-}/*# sourceMappingURL=03-project-view.css.map */
+}/*# sourceMappingURL=03-project-view-3.css.map */
