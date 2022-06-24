@@ -69,29 +69,24 @@
 #root > div:nth-child(2) > div:nth-child(1) > div {
   position: absolute;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-size: auto 100%;
+  background-position: center top;
 }
 #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
   width: 15vh;
   height: 15vh;
   background-image: url(../image/project01-sticker-01.svg);
-  top: 30vh;
-  left: 13vw;
 }
 #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) {
   width: 18vh;
-  height: 25vh;
+  height: 21vh;
   background-image: url(../image/project01-sticker-02.svg);
-  top: 32vh;
-  left: 25vw;
   z-index: 2;
 }
 #root > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) {
   width: 45vh;
-  height: 50vh;
+  height: 48vh;
   background-image: url(../image/project01-sticker-03.svg);
-  top: 5vh;
-  left: 23vw;
   z-index: 1;
 }
 #root > div:nth-child(2) > div:nth-child(2) {

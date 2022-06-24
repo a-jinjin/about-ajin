@@ -26,9 +26,9 @@
     <div>
       <!-- 배경 왼쪽 -->
       <div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div id="sticker-1" draggable="true"></div>
+        <div id="sticker-2" draggable="true"></div>
+        <div id="sticker-3" draggable="true"></div>
       </div>
       <!-- 배경 오른쪽 -->
       <div></div>
@@ -43,6 +43,72 @@
 
     btnClose.addEventListener("click", function () {
       location.href = './02-project-01-main.html';
+    });
+
+    const stickerOne = document.getElementById('sticker-1');
+    const stickerTwo = document.getElementById('sticker-2');
+    const stickerThr = document.getElementById('sticker-3');
+
+    // 스티커 위치
+    let oneX = 8;
+    let oneY = 24;
+    let twoX = 24;
+    let twoY = 35;
+    let thrX = 22;
+    let thrY = 3;
+    stickerOne.style.top = `${oneY}vh`;
+    stickerOne.style.left = `${oneX}vw`;
+    stickerTwo.style.top = `${twoY}vh`;
+    stickerTwo.style.left = `${twoX}vw`;
+    stickerThr.style.top = `${thrY}vh`;
+    stickerThr.style.left = `${thrX}vw`;
+
+    stickerOne.addEventListener("dragstart", (eTarget) => {
+      console.log('드래그 시작');
+    });
+    
+    stickerOne.addEventListener("drag", (eTarget) => {
+      console.log('드래그 중');
+    });
+
+    stickerOne.addEventListener("dragend", (eTarget) => {
+      // console.log(eTarget.screenX);
+      let stickerX = eTarget.clientX;
+      let stickerY = eTarget.clientY;
+      stickerOne.style.left = `${stickerX}px`;
+      stickerOne.style.top = `${stickerY}px`;
+    });
+
+    stickerTwo.addEventListener("dragstart", (eTarget) => {
+      console.log('드래그 시작');
+    });
+    
+    stickerTwo.addEventListener("drag", (eTarget) => {
+      console.log('드래그 중');
+    });
+
+    stickerTwo.addEventListener("dragend", (eTarget) => {
+      // console.log(eTarget.screenX);
+      let stickerX = eTarget.clientX;
+      let stickerY = eTarget.clientY;
+      stickerTwo.style.left = `${stickerX}px`;
+      stickerTwo.style.top = `${stickerY}px`;
+    });
+
+    stickerThr.addEventListener("dragstart", (eTarget) => {
+      console.log('드래그 시작');
+    });
+    
+    stickerThr.addEventListener("drag", (eTarget) => {
+      console.log('드래그 중');
+    });
+
+    stickerThr.addEventListener("dragend", (eTarget) => {
+      // console.log(eTarget.screenX);
+      let stickerX = eTarget.clientX;
+      let stickerY = eTarget.clientY;
+      stickerThr.style.left = `${stickerX}px`;
+      stickerThr.style.top = `${stickerY}px`;
     });
     
   </script>

@@ -29,9 +29,11 @@
 
     <!--------- 버튼 --------->
     <footer>
-      <button id="btn-ajin"></button>
-      <button id="btn-github"></button>
-      <button id="btn-mail"></button>
+      <div>
+        <button id="btn-ajin"></button>
+        <button id="btn-github"></button>
+      </div>
+      <p>Copyright [C] AJin LEE</p>
     </footer>
 
     <!--------- 배경 --------->
@@ -51,9 +53,33 @@
     const bookContainer = document.getElementById('book-container');
     const books = document.querySelectorAll('.books');
     const btnGithub = document.getElementById('btn-github');
+    const btnAjin = document.getElementById('btn-ajin');
 
+    // 깃허브 링크
     btnGithub.addEventListener('click', () => {
-      location.href
+      location.href = `https://github.com/a-jinjin`;
+    });
+
+    // 이력서 링크
+    btnAjin.addEventListener('click', () => {
+      const buttonClose = document.createElement('button');
+      const ajinResume = document.createElement('div');
+      const bgBlur = document.createElement('div');
+
+      buttonClose.classList.add('btn-close-ajin');
+      ajinResume.classList.add('ajin-resume');
+      bgBlur.classList.add('bg-blur');
+      root.appendChild(buttonClose);
+      root.appendChild(ajinResume);
+      root.appendChild(bgBlur);
+
+      ajinResume.style.backgroundImage = `url(./image/ajin-resume.png)`;
+
+      buttonClose.addEventListener('click', function() {
+          root.removeChild(buttonClose);
+          root.removeChild(ajinResume);
+          root.removeChild(bgBlur);
+        });
     })
     
     // 책 1~4권 배경이미지
@@ -75,8 +101,7 @@
     const projectLink = [
     './02-project-01-main.html',
     './02-project-02-main.html',
-    './02-project-03-main.html',
-    './02-project-01-main.html'
+    './02-project-03-main.html'
     ]
 
     for(let i = 0; i < books.length; i++) {
@@ -125,58 +150,61 @@
         });
 
         bookThum.addEventListener('click', function() {
-          root.removeChild(buttonClose);
+          if(bookMiniNumber === 3) {
+            alert('제 4호는 준비중입니다!');
+          }
+          else{
+            root.removeChild(buttonClose);
           
-          const gridPaper = document.createElement('div');
-          gridPaper.classList.add('bg-grid');
-          root.appendChild(gridPaper);
+            const gridPaper = document.createElement('div');
+            gridPaper.classList.add('bg-grid');
+            root.appendChild(gridPaper);
 
-          let gridHeight = 5;
-          let thumWidth = 38;
-          let thumHeight = 50;
-          let thumTop = 24;
-          let thumBgSize = 100;
+            let gridHeight = 5;
+            let thumWidth = 38;
+            let thumHeight = 50;
+            let thumTop = 24;
+            let thumBgSize = 100;
 
-          const gridMove = setInterval(() => {
-            gridHeight = gridHeight+5;
-            gridPaper.style.height = `${gridHeight}vh`;
+            const gridMove = setInterval(() => {
+              gridHeight = gridHeight+5;
+              gridPaper.style.height = `${gridHeight}vh`;
 
-            if(gridHeight === 100) {
-              clearInterval(gridMove);
-            }
-          }, 20);
+              if(gridHeight === 100) {
+                clearInterval(gridMove);
+              }
+            }, 20);
 
-          const thumWidthMove = setInterval(() => {
-            thumWidth = thumWidth+2;
-            bookThum.style.width = `${thumWidth}vw`;
-            bookThum.style.backgroundPosition = `right center`;
-            thumBgSize = thumBgSize-5;
-            bookThum.style.backgroundSize = `${thumBgSize}% 100%`;
+            const thumWidthMove = setInterval(() => {
+              thumWidth = thumWidth+2;
+              bookThum.style.width = `${thumWidth}vw`;
+              bookThum.style.backgroundPosition = `right center`;
+              thumBgSize = thumBgSize-5;
+              bookThum.style.backgroundSize = `${thumBgSize}% 100%`;
 
-            if(thumWidth === 80){
-              clearInterval(thumWidthMove);
-              bookThum.style.borderRadius = 0;
-              bookThum.style.borderWidth = `3px 3px 0 3px`;
-              bookThum.style.boxShadow = 'none';
-              
-              const thumHeightMove = setInterval(() => {
-                thumHeight = thumHeight+6;
-                bookThum.style.height = `${thumHeight}vh`;
-                thumTop = thumTop-2;
-                bookThum.style.top = `${thumTop}vh`;
+              if(thumWidth === 80){
+                clearInterval(thumWidthMove);
+                bookThum.style.borderRadius = 0;
+                bookThum.style.borderWidth = `3px 3px 0 3px`;
+                bookThum.style.boxShadow = 'none';
+                
+                const thumHeightMove = setInterval(() => {
+                  thumHeight = thumHeight+6;
+                  bookThum.style.height = `${thumHeight}vh`;
+                  thumTop = thumTop-2;
+                  bookThum.style.top = `${thumTop}vh`;
 
-                if(thumTop === 10) {
-                  clearInterval(thumHeightMove);
-                  // console.log(bookMiniNumber);
-                  // location.href = './02-project-01.html';
-                  location.href = projectLink[bookMiniNumber];
-                }
-
-              }, 10);
-            }
-          }, 10);
+                  if(thumTop === 10) {
+                    clearInterval(thumHeightMove);
+                    // console.log(bookMiniNumber);
+                    // location.href = './02-project-01.html';
+                    location.href = projectLink[bookMiniNumber];
+                  }
+                }, 10);
+              }
+            }, 10);
+          }
         });
-
       });
 
       
