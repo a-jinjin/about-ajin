@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/03-project-view-3.css">
+</head>
+<body>
+  <div id="root">
+    <!-- 컨텐츠 영역 (뷰박스 / 닫기버튼) -->
+    <div>
+      <!-- 아이폰 428*926 -->
+      <div>
+        <!-- 엠자탈모 -->
+        <div></div>
+        <!-- 컨텐츠 영역 -->
+        <main id="main-contents"></main>
+      </div>
+      <!-- 닫기버튼 -->
+      <button id="btn-close"></button>
+    </div>
+    
+    <!-- 배경 요소영역 -->
+    <div>
+      <!-- 배경 왼쪽 -->
+      <div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <!-- 배경 오른쪽 -->
+      <div></div>
+    </div>
+  </div>
+
+
+  <script>
+    const mainArea = document.getElementById('main-contents');
+    const btnClose = document.getElementById('btn-close');
+    console.log(btnClose);
+
+    btnClose.addEventListener("click", function () {
+      location.href = './02-project-03-main.html';
+    });
+    
+  </script>
+</body>
+</html>

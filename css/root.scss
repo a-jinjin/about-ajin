@@ -1,7 +1,0 @@
-@mixin root {
-  @include size-wh(100vw, 100vh);
-  background-color: $color-green;
-  background-image: url(../img/bg-grid-1.svg);
-  background-size: 30px;
-  display: flex;
-}

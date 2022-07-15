@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/02-project-01-design-2.css">
+</head>
+<body>
+  <div id="root">
+    <!-- 제일 큰 배경 -->
+    <div id="bg-paper">
+      <!-- 상단 헤더영역 -->
+      <header>
+        <!-- 발행호수 --> 
+        <div>
+          <p>1 / 4</p>
+          <p>2022 / 제 1호</p>
+        </div>
+        <!-- 로고영역 -->
+        <div>
+          <!-- 좌측 -->
+          <div>
+            <p>월간아진 / 제 1호</p>
+            <p>하루의 잉크</p>
+            <button id="button-home"></button>
+          </div>
+          <!-- 로고 -->
+          <div>
+            <img src="./image/logo-big.svg" alt="logo-main-big">
+          </div>
+          <!-- 우측 -->
+          <div>
+            <!-- 장식 -->
+            <div></div>
+            <!-- 버튼 -->
+            <div>
+              <button></button><button></button><button></button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- 메인 컨텐츠 영역 -->
+      <main>
+        <!-- 좌측 메뉴 -->
+        <aside>
+          <div id="subMenu-design">디자인 컨셉</div>
+          <div>
+            <p>잉크의 흐르는 모양을 표현하기 위해 곡선적인 요소들을 많이 배치했다.<br>메인이 되는 ‘기분’ 이모티콘들은 종이 위에 펜으로 그린 것 같은 느낌이 나도록 라인 드로잉으로 제작했다.</p>
+          </div>
+          <div id="subMenu-flow">와이어 플로우</div>
+          <div id="subMenu-color">색상</div>
+        </aside>
+        <!-- 메인 이미지 -->
+        <article>
+        </article>
+      </main>
+
+    </div>
+    <!-- 상단 카테고리 -->
+    <div id="bg-category">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+
+  <script>
+    const topMenuBox = document.getElementById('bg-category');
+    const topMenu = topMenuBox.children;
+    const btnHome = document.getElementById('button-home');
+    const btnColor = document.getElementById('subMenu-color');
+    const btnFlow = document.getElementById('subMenu-flow');
+
+    btnColor.addEventListener('click', () => {
+      location.href = '02-project-01-design.html';
+    });
+    btnFlow.addEventListener('click', () => {
+      location.href = '02-project-01-design-3.html';
+    });
+
+    let menuText = [
+      '소개', 
+      '디자인',
+      '분석'
+    ];
+
+    for(let i = 0; i < topMenu.length; i++) {
+      topMenu[i].textContent = menuText[i];
+      topMenu[i].classList.add('top-menu');
+      topMenu[i].style.cursor = 'pointer';
+      
+      if(i === 0) {
+        topMenu[1].classList.add('top-menu-on');
+        topMenu[0].addEventListener('click', () => {
+          location.href = './02-project-01-main.html'
+        });
+        topMenu[2].addEventListener('click', () => {
+          location.href = './02-project-01-analysis.html'
+        });
+      }
+    }
+
+
+    btnHome.addEventListener('click', () => {
+      location.href = './01-main.html';
+    });
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+@import "./colors.scss";
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+
+#root {
+  width: 100vw; height: 100vh;
+  background-image: url(../image/bg-grid.svg);
+  background-size: 30px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > div:nth-child(1) {
+    width: 500px; height: 926px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+
+    & > div:nth-child(1) {
+      width: 428px; height: 926px;
+      border: 3px solid $color-black;
+      border-radius: 30px;
+      background-color: #fff;
+      box-shadow: 4px 4px 0 $color-red;
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+  
+      // 엠자탈모
+      & > div:nth-child(1) {
+        width: 180px; height: 3vh;
+        background-color: $color-black;
+        border-radius: 0 0 2vh 2vh;
+        position: absolute;
+      }
+  
+      // 내용물 (프로젝트)
+      & > main:nth-child(2) {
+        width: 100%; height: 100%;
+        background-image: url(../image/project01-page-01.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+      }
+    }
+
+    & > button:nth-child(2) {
+      width: 45px; height: 45px;
+      border-radius: 30px;
+      border: 2px solid $color-black;
+      box-shadow: 1px 1px 0 $color-black;
+      background-image: url(../image/button-close-off.svg);
+    }
+  }
+  
+
+  // 배경 요소 영역
+  & > div:nth-child(2) {
+    width: 100vw; height: 100vh;
+    display: flex;
+    position: absolute;
+    z-index: 1;
+
+    // 배경 왼쪽
+    & > div:nth-child(1) {
+      width: 50vw; height: 100vh;
+
+      & > div {
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        background-position: center top;
+      }
+      
+      & > div:nth-child(1) {
+        width: 15vh; height: 15vh;
+        background-image: url(../image/project01-sticker-01.svg);
+      }
+      & > div:nth-child(2) {
+        width: 18vh; height: 21vh;
+        background-image: url(../image/project01-sticker-02.svg);
+        z-index: 2;
+      }
+      & > div:nth-child(3) {
+        width: 45vh; height: 48vh;
+        background-image: url(../image/project01-sticker-03.svg);
+        z-index: 1;
+      }
+    }
+
+    // 배경 오른쪽
+    & > div:nth-child(2) {
+      width: 45vh; height: 90vh;
+      background-image: url(../image/bg-stationary.svg);
+      background-repeat: no-repeat;
+      position: absolute;
+      right: 5vw;
+      top: 5vh;
+    }
+  }
+}

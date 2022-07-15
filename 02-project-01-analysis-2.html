@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/02-project-01-analysis-2.css">
+</head>
+<body>
+  <div id="root">
+    <!-- 제일 큰 배경 -->
+    <div id="bg-paper">
+      <!-- 상단 헤더영역 -->
+      <header>
+        <!-- 발행호수 --> 
+        <div>
+          <p>1 / 4</p>
+          <p>2022 / 제 1호</p>
+        </div>
+        <!-- 로고영역 -->
+        <div>
+          <!-- 좌측 -->
+          <div>
+            <p>월간아진 / 제 1호</p>
+            <p>하루의 잉크</p>
+            <button id="button-home"></button>
+          </div>
+          <!-- 로고 -->
+          <div>
+            <img src="./image/logo-big.svg" alt="logo-main-big">
+          </div>
+          <!-- 우측 -->
+          <div>
+            <!-- 장식 -->
+            <div></div>
+            <!-- 버튼 -->
+            <div>
+              <button></button><button></button><button></button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- 메인 컨텐츠 영역 -->
+      <main>
+        <!-- 좌측 메뉴 -->
+        <aside>
+          <div id="subMenu-journey">사용자 여정</div>
+          <div>
+            <p></p>
+          </div>
+          <div id="subMenu-persona">페르소나</div>
+        </aside>
+        <!-- 메인 이미지 -->
+        <article>
+          <div>
+            <div></div>
+            <div>행동</div>
+            <div>기분</div>
+            <div>개선<br>방향</div>
+          </div>
+          <div>
+            <div>접속</div>
+            <div>인트로 페이지에 적힌 글을 읽는다. “오늘 하루의 기분은 어떤가요?”<br>시작버튼을 누른다.</div>
+            <div>
+              <div></div>
+              <p>흥미로움, 새로운 것에 대한 호기심<br>"이게 뭔데?"</p>
+            </div>
+            <div>
+              메인페이지에서 흥미를 유도할 수 있는 눈요깃거리를 제공한다.
+            </div>
+          </div>
+          <div>
+            <div>선택지 고르기</div>
+            <div>체크, 체크<br>오늘 기분에 따라 선택지를 체크한다.</div>
+            <div>
+              <div></div>
+              <p>즐거움<br>"오늘은 즐거웠다"<br>"조금 슬펐지만 맛있는걸 먹었어."</p>
+            </div>
+            <div>
+              기분을 세분화하여 표현할 수 있는 선택지를 더 늘려본다.
+            </div>
+          </div>
+          <div>
+            <div>추천 잉크</div>
+            <div>추천해주는 잉크를 본다.<br>'상세페이지'버튼을 누른다.</div>
+            <div>
+              <div></div>
+              <p>"이런 잉크도 있구나"<br>"파란색 잉크라면 많이 갖고있는데."<br>"다른 색을 보고싶다."</p>
+            </div>
+            <div>
+              비슷한 컬러군의 잉크를 여러개 추천해준다.<br>"다른 컬러 보기"라는 선택지를 준다.
+            </div>
+          </div>
+          <div>
+            <div>정보 확인</div>
+            <div>번짐정도, 묽은 정도 등 추천해주는 잉크에 대한 자세한 정보를 확인한다.</div>
+            <div>
+              <div></div>
+              <p>"비슷한 컬러의 잉크가 있나?"<br>"더 적은 용량은 없나?"<br>"내가 가진 잉크랑 비슷한 색인가?"</p>
+            </div>
+            <div>
+              잉크에 대한 세분화된 정보를 제공해본다.<br>소분에 대한 정보를 제공한다.
+            </div>
+          </div>
+        </article>
+      </main>
+
+    </div>
+    <!-- 상단 카테고리 -->
+    <div id="bg-category">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+
+  <script>
+    const topMenuBox = document.getElementById('bg-category');
+    const topMenu = topMenuBox.children;
+    const btnHome = document.getElementById('button-home');
+    const btnPersona = document.getElementById('subMenu-persona');
+
+    btnPersona.addEventListener('click', () => {
+      location.href = './02-project-01-analysis.html'
+    });
+    
+    let menuText = [
+      '소개', 
+      '디자인',
+      '분석'
+    ];
+
+    for(let i = 0; i < topMenu.length; i++) {
+      topMenu[i].textContent = menuText[i];
+      topMenu[i].classList.add('top-menu');
+      topMenu[i].style.cursor = 'pointer';
+      
+      if(i === 2) {
+        topMenu[2].classList.add('top-menu-on');
+        topMenu[0].addEventListener('click', () => {
+          location.href = './02-project-01-main.html'
+        });
+        topMenu[1].addEventListener('click', () => {
+          location.href = './02-project-01-design.html'
+        });
+      }
+    }
+
+
+    btnHome.addEventListener('click', () => {
+      location.href = './01-main.html';
+    });
+
+  </script>
+</body>
+</html>

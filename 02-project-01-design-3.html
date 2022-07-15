@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/02-project-01-design-3.css">
+</head>
+<body>
+  <div id="root">
+    <!-- 제일 큰 배경 -->
+    <div id="bg-paper">
+      <!-- 상단 헤더영역 -->
+      <header>
+        <!-- 발행호수 --> 
+        <div>
+          <p>1 / 4</p>
+          <p>2022 / 제 1호</p>
+        </div>
+        <!-- 로고영역 -->
+        <div>
+          <!-- 좌측 -->
+          <div>
+            <p>월간아진 / 제 1호</p>
+            <p>하루의 잉크</p>
+            <button id="button-home"></button>
+          </div>
+          <!-- 로고 -->
+          <div>
+            <img src="./image/logo-big.svg" alt="logo-main-big">
+          </div>
+          <!-- 우측 -->
+          <div>
+            <!-- 장식 -->
+            <div></div>
+            <!-- 버튼 -->
+            <div>
+              <button></button>
+              <button id="btn-github"></button>
+              <button></button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- 메인 컨텐츠 영역 -->
+      <main>
+        <!-- 좌측 메뉴 -->
+        <aside>
+          <div id="subMenu-flow">와이어 플로우</div>
+          <div>
+            <p></p>
+          </div>
+          <div id="subMenu-color">색상</div>
+          <div id="subMenu-design">디자인컨셉</div>
+        </aside>
+        <!-- 메인 이미지 -->
+        <article>
+          <!-- 이미지 -->
+          <div id="slider-img"></div>
+          <!-- 슬라이더 -->
+          <div>
+            <div id="slider-left"></div>
+            <div id="slider-item">
+              <p>1</p>
+              <p>/2</p>
+            </div>
+            <div id="slider-right"></div>
+          </div>
+        </article>
+      </main>
+
+    </div>
+    <!-- 상단 카테고리 -->
+    <div id="bg-category">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+
+  <script>
+    const topMenuBox = document.getElementById('bg-category');
+    const topMenu = topMenuBox.children;
+    const btnHome = document.getElementById('button-home');
+    const btnColor = document.getElementById('subMenu-color');
+    const btnDesign = document.getElementById('subMenu-design');
+    const sliderBtnLeft = document.getElementById('slider-left');
+    const sliderBtnRight = document.getElementById('slider-right');
+    const sliderContainer = document.getElementById('slider-item');
+    const sliderImg = document.getElementById('slider-img');
+    const btnGithub = document.getElementById('btn-github');
+
+    let gitLink = `https://github.com/a-jinjin`;
+    btnGithub.addEventListener('click', () => {
+      window.open(gitLink);
+    });
+
+    let sliderCurrent = 0;
+    const flowImg = [
+      `url(./image/project-01-flow-1.png)`,
+      `url(./image/project-01-flow-2.png)`
+    ]
+
+    sliderBtnLeft.addEventListener('click', () => {
+      if(sliderCurrent === 0) {
+        sliderCurrent = 0;
+        alert('첫번째 페이지입니다');
+        sliderContainer.children[0].innerText = sliderCurrent+1;
+        sliderImg.style.backgroundImage = flowImg[sliderCurrent];
+
+      } else {
+        sliderCurrent--;
+        sliderContainer.children[0].innerText = sliderCurrent+1;
+        sliderImg.style.backgroundImage = flowImg[sliderCurrent];
+      }
+    });
+
+    sliderBtnRight.addEventListener('click', () => {
+      if(sliderCurrent === flowImg.length-1) {
+        sliderCurrent = flowImg.length-1;
+        alert('마지막 페이지입니다');
+        sliderContainer.children[0].innerText = sliderCurrent+1;
+        sliderImg.style.backgroundImage = flowImg[sliderCurrent];
+
+      } else {
+        sliderCurrent++;
+        sliderContainer.children[0].innerText = sliderCurrent+1;
+        sliderImg.style.backgroundImage = flowImg[sliderCurrent];
+      }
+    });
+
+
+    btnColor.addEventListener('click', () => {
+      location.href = '02-project-01-design.html';
+    });
+    btnDesign.addEventListener('click', () => {
+      location.href = '02-project-01-design-2.html';
+    });
+
+    let menuText = [
+      '소개', 
+      '디자인',
+      '분석'
+    ];
+
+    for(let i = 0; i < topMenu.length; i++) {
+      topMenu[i].textContent = menuText[i];
+      topMenu[i].classList.add('top-menu');
+      topMenu[i].style.cursor = 'pointer';
+      
+      if(i === 0) {
+        topMenu[1].classList.add('top-menu-on');
+        topMenu[0].addEventListener('click', () => {
+          location.href = './02-project-01-main.html'
+        });
+        topMenu[2].addEventListener('click', () => {
+          location.href = './02-project-01-analysis.html'
+        });
+      }
+    }
+
+
+    btnHome.addEventListener('click', () => {
+      location.href = './01-main.html';
+    });
+
+  </script>
+</body>
+</html>

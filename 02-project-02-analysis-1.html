@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/02-project-02-analysis.css">
+</head>
+<body>
+  <div id="root">
+    <!-- 제일 큰 배경 -->
+    <div id="bg-paper">
+      <!-- 상단 헤더영역 -->
+      <header>
+        <!-- 발행호수 --> 
+        <div>
+          <p>2 / 4</p>
+          <p>2022 / 제 2호</p>
+        </div>
+        <!-- 로고영역 -->
+        <div>
+          <!-- 좌측 -->
+          <div>
+            <p>월간아진 / 제 2호</p>
+            <p>피젯 원더랜드</p>
+            <button id="button-home"></button>
+          </div>
+          <!-- 로고 -->
+          <div>
+            <img src="./image/logo-big.svg" alt="logo-main-big">
+          </div>
+          <!-- 우측 -->
+          <div>
+            <!-- 장식 -->
+            <div></div>
+            <!-- 버튼 -->
+            <div>
+              <button></button>
+              <button></button>
+              <button></button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- 메인 컨텐츠 영역 -->
+      <main>
+        <!-- 좌측 메뉴 -->
+        <aside>
+          <div id="subMenu-persona">페르소나</div>
+          <div>
+            <p>사회 초년생일 수도, 아닐 수도 있는 애매한 경계에 있는 나이대는 20대 후반에서 30대 초반이라고 생각했습니다.<br>가장 고민이 많을 시기를 보내고 있을 청년층을 타겟으로 페르소나 분석을 진행했습니다.</p>
+          </div>
+        </aside>
+        <!-- 메인 이미지 -->
+        <article>
+          <div>
+            <!-- 페르소나 이미지 -->
+            <div>
+              <!-- 이름과 한줄요약 -->
+              <div>
+                <div><span class="txt-18 txt-bold txt-beige">김민성</span><br>남성/32세</div>
+                <div>하루종일 심심한 손을 어떻게 해야할까?</div>
+              </div>
+              <!-- 이미지와 키워드 -->
+              <div>
+                <div></div>
+                <div>
+                  <div>사회<br>초년생</div>
+                  <div>집중력<br>필요</div>
+                  <div>키덜트족</div>
+                </div>
+              </div>
+            </div>
+            <!-- 내용 텍스트 -->
+            <div>
+              <p>스토리</p>
+              <p>손톱 물어뜯기, 다리 떨기, 연필 돌리기. 하나만 해도 바쁠텐데 민성씨는 이 모든 것을 다 합니다. 다리를 떨면 집중력이 올라간다는 연구결과도 있다던데, 옆자리 사람은 매번 눈치를 주곤 합니다. <br>최근에는 심심한 손을 어떻게든 움직여보려 레고 조립을 시작했다가 동심을 자극하는 장난감에 매력을 느껴 일명 '키덜트족'이 되었습니다.<br>동심을 자극하면서도 손을 움직일 수 있는 컨텐츠가 어디 없을까요?</p>
+            </div>
+          </div>
+          <div>
+            <!-- 페르소나 이미지 -->
+            <div>
+              <!-- 이름과 한줄요약 -->
+              <div>
+                <div><span class="txt-18 txt-bold txt-beige">박지민</span><br>여성/29세</div>
+                <div>생각을 좀 비우고 싶어.</div>
+              </div>
+              <!-- 이미지와 키워드 -->
+              <div>
+                <div></div>
+                <div>
+                  <div>1인가구</div>
+                  <div>저자극<br>컨텐츠</div>
+                  <div>스마트폰<br>사용자</div>
+                </div>
+              </div>
+            </div>
+            <!-- 내용 텍스트 -->
+            <div>
+              <p>스토리</p>
+              <p>하루종일 일을 하고 집으로 돌아오면 옷갈아입을 기력조차 없습니다. 온종일 일만 하다 돌아온 것 같은데도 아무것도 이룬 것이 없는 것만 같은 기분에 침대에 누워 하염없이 스마트폰 화면을 바라봅니다.<br>자극적인 컨텐츠의 소용돌이 속에서 헤매다 오히려 잠이 깨버리고, 뒤늦게 밀려오는 내일에 대한 걱정이 잠못드는 밤을 만들고 맙니다.<br>잠을 깨우지 않으면서도 심심함을 달랠 수 있는 컨텐츠가 필요합니다.</p>
+            </div>
+          </div>
+        </article>
+      </main>
+
+    </div>
+    <!-- 상단 카테고리 -->
+    <div id="bg-category">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+
+  <script>
+    const topMenuBox = document.getElementById('bg-category');
+    const topMenu = topMenuBox.children;
+    const btnHome = document.getElementById('button-home');
+    
+
+    let menuText = [
+      '소개', 
+      '디자인',
+      '분석'
+    ];
+
+    let projectTwoLink = [
+      `./02-project-02-main.html`,
+      `./02-project-02-design-1.html`,
+      `./02-project-02-analysis-1.html`
+    ]
+
+    for(let i = 0; i < topMenu.length; i++) {
+      topMenu[i].textContent = menuText[i];
+      topMenu[i].style.cursor = 'pointer';
+      topMenu[i].addEventListener('click', () => {
+        location.href = projectTwoLink[i];
+      });
+      
+      if(i === 2) {
+        topMenu[2].classList.add('top-menu-on');
+        
+      }else{
+        topMenu[i].classList.add('top-menu');
+      }
+    }
+
+    btnHome.addEventListener('click', () => {
+      location.href = './01-main.html';
+    });
+
+  </script>
+</body>
+</html>
