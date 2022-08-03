@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="./CSS/02-project-02-design-3.css">
+  <link rel="stylesheet" href="../CSS/02-project-02-design-3.css">
 </head>
 <body>
   <div id="root">
@@ -28,7 +28,7 @@
           </div>
           <!-- 로고 -->
           <div>
-            <img src="./image/logo-big.svg" alt="logo-main-big">
+            <img src="../image/logo-big.svg" alt="logo-main-big">
           </div>
           <!-- 우측 -->
           <div>
@@ -36,9 +36,9 @@
             <div></div>
             <!-- 버튼 -->
             <div>
-              <button id="btn-resume"></button>
-              <button id="btn-github"></button>
-              <button id="btn-mail"></button>
+              <button id="button-ajin"></button>
+              <button id="button-git"></button>
+              <button></button>
             </div>
           </div>
         </div>
@@ -84,25 +84,23 @@
   <script>
     const topMenuBox = document.getElementById('bg-category');
     const topMenu = topMenuBox.children;
-    const btnHome = document.getElementById('button-home');
     const btnColor = document.getElementById('subMenu-color');
     const btnDesign = document.getElementById('subMenu-design');
     const sliderBtnLeft = document.getElementById('slider-left');
     const sliderBtnRight = document.getElementById('slider-right');
     const sliderContainer = document.getElementById('slider-item');
     const sliderImg = document.getElementById('slider-img');
-    const btnGithub = document.getElementById('btn-github');
+    const btnHome = document.getElementById('button-home');
+    const btnAjin = document.getElementById('button-ajin');
+    const btnGithub = document.getElementById('button-git');
 
-    let gitLink = `https://github.com/a-jinjin`;
-    btnGithub.addEventListener('click', () => {
-      window.open(gitLink);
-    });
 
     let menuText = [
       '소개', 
       '디자인',
       '분석'
     ];
+    
     let projectTwoLink = [
       `./02-project-02-main.html`,
       `./02-project-02-design-1.html`,
@@ -116,8 +114,8 @@
         location.href = projectTwoLink[i];
       });
       
-      if(i === 2) {
-        topMenu[2].classList.add('top-menu-on');
+      if(i === 1) {
+        topMenu[i].classList.add('top-menu-on');
         
       }else{
         topMenu[i].classList.add('top-menu');
@@ -126,9 +124,9 @@
 
     let sliderCurrent = 0;
     const flowImg = [
-      `url(./image/project-02-flow-1.png)`,
-      `url(./image/project-02-flow-2.png)`,
-      `url(./image/project-02-flow-3.png)`
+      `url(../image/project-02-flow-1.png)`,
+      `url(../image/project-02-flow-2.png)`,
+      `url(../image/project-02-flow-3.png)`
     ]
 
     sliderBtnLeft.addEventListener('click', () => {
@@ -168,10 +166,37 @@
     });
 
     
-
-
+    // 홈으로 돌아가기
     btnHome.addEventListener('click', () => {
       location.href = './01-main.html';
+    });
+
+    // 깃허브 링크
+    let gitLink = `https://github.com/a-jinjin`;
+    btnGithub.addEventListener('click', () => {
+      window.open(gitLink);
+    });
+
+    // 이력서 링크
+    btnAjin.addEventListener('click', () => {
+      const buttonClose = document.createElement('button');
+      const ajinResume = document.createElement('div');
+      const bgBlur = document.createElement('div');
+
+      buttonClose.classList.add('btn-close-ajin');
+      ajinResume.classList.add('ajin-resume');
+      bgBlur.classList.add('bg-blur');
+      root.appendChild(buttonClose);
+      root.appendChild(ajinResume);
+      root.appendChild(bgBlur);
+
+      ajinResume.style.backgroundImage = `url(../image/ajin-resume.png)`;
+
+      buttonClose.addEventListener('click', function() {
+          root.removeChild(buttonClose);
+          root.removeChild(ajinResume);
+          root.removeChild(bgBlur);
+        });
     });
 
   </script>
