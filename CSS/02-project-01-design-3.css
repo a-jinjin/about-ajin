@@ -42,6 +42,115 @@
   color: #F3EDD3;
 }
 
+.book-stand {
+  width: 350px;
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background-image: url(../image/bg-bookstand.svg);
+  background-position: bottom center;
+  background-repeat: no-repeat;
+}
+
+.books {
+  width: 130px;
+  height: 150px;
+  background-color: #fff;
+  border: 2px solid #1D3254;
+  border-radius: 5px;
+  margin-bottom: 18px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: 0.3s;
+}
+
+.books-on {
+  width: 130px;
+  height: 150px;
+  background-color: #1D3254;
+  border: 2px solid #1D3254;
+  border-radius: 5px;
+  box-shadow: 4px 4px 0 #FFBFAD;
+  margin-bottom: 30px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: 0.1s;
+}
+
+.margin-r-20 {
+  margin-right: 20px;
+}
+
+.book-thum {
+  width: 38vh;
+  height: 50vh;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: 3px solid #1D3254;
+  border-radius: 1vh;
+  box-shadow: 6px 6px 0 #FFBFAD;
+  position: absolute;
+  z-index: 4;
+  top: 24vh;
+}
+
+.ajin-resume {
+  width: 80vh;
+  height: 55vh;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: top center;
+  position: absolute;
+  z-index: 4;
+  top: 20vh;
+}
+
+.btn-close-off {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  border: 2px solid #1D3254;
+  box-shadow: 1px 1px 0 #1D3254;
+  background-image: url(../image/button-close-off.svg);
+  position: absolute;
+  z-index: 4;
+  top: 17vh;
+}
+
+.btn-close-ajin {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  border: 2px solid #1D3254;
+  box-shadow: 1px 1px 0 #1D3254;
+  background-image: url(../image/button-close-off.svg);
+  position: absolute;
+  z-index: 4;
+  top: 13vh;
+}
+
+.bg-blur {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(243, 237, 211, 0.7);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  position: absolute;
+  z-index: 2;
+}
+
+.bg-grid {
+  width: 100vw;
+  height: 5vh;
+  background-image: url(../image/bg-grid.svg);
+  background-size: 30px 30px;
+  position: absolute;
+  bottom: 0;
+  z-index: 3;
+}
+
 * {
   margin: 0;
   padding: 0;
