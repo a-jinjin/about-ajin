@@ -36,7 +36,9 @@
             <div></div>
             <!-- 버튼 -->
             <div>
-              <button></button><button></button><button></button>
+              <button id="button-ajin"></button>
+              <button id="button-git"></button>
+              <button></button>
             </div>
           </div>
         </div>
@@ -71,9 +73,11 @@
   <script>
     const topMenuBox = document.getElementById('bg-category');
     const topMenu = topMenuBox.children;
-    const btnHome = document.getElementById('button-home');
     const btnColor = document.getElementById('subMenu-color');
     const btnFlow = document.getElementById('subMenu-flow');
+    const btnHome = document.getElementById('button-home');
+    const btnAjin = document.getElementById('button-ajin');
+    const btnGithub = document.getElementById('button-git');
 
     btnColor.addEventListener('click', () => {
       location.href = './02-project-01-design.html';
@@ -88,25 +92,58 @@
       '분석'
     ];
 
+    let projectOneLink = [
+      `./02-project-01-main.html`,
+      `./02-project-01-design-1.html`,
+      `./02-project-01-analysis-1.html`
+    ];
+
     for(let i = 0; i < topMenu.length; i++) {
       topMenu[i].textContent = menuText[i];
-      topMenu[i].classList.add('top-menu');
       topMenu[i].style.cursor = 'pointer';
+      topMenu[i].addEventListener('click', () => {
+        location.href = projectOneLink[i];
+      });
       
-      if(i === 0) {
-        topMenu[1].classList.add('top-menu-on');
-        topMenu[0].addEventListener('click', () => {
-          location.href = './02-project-01-main.html'
-        });
-        topMenu[2].addEventListener('click', () => {
-          location.href = './02-project-01-analysis.html'
-        });
+      if(i === 1) {
+        topMenu[i].classList.add('top-menu-on');
+        
+      }else{
+        topMenu[i].classList.add('top-menu');
       }
     }
 
-
+    // 홈으로 돌아가기
     btnHome.addEventListener('click', () => {
       location.href = './01-main.html';
+    });
+
+    // 깃허브 링크
+    let gitLink = `https://github.com/a-jinjin`;
+    btnGithub.addEventListener('click', () => {
+      window.open(gitLink);
+    });
+
+    // 이력서 링크
+    btnAjin.addEventListener('click', () => {
+      const buttonClose = document.createElement('button');
+      const ajinResume = document.createElement('div');
+      const bgBlur = document.createElement('div');
+
+      buttonClose.classList.add('btn-close-ajin');
+      ajinResume.classList.add('ajin-resume');
+      bgBlur.classList.add('bg-blur');
+      root.appendChild(buttonClose);
+      root.appendChild(ajinResume);
+      root.appendChild(bgBlur);
+
+      ajinResume.style.backgroundImage = `url(../image/ajin-resume.png)`;
+
+      buttonClose.addEventListener('click', function() {
+          root.removeChild(buttonClose);
+          root.removeChild(ajinResume);
+          root.removeChild(bgBlur);
+        });
     });
 
   </script>
